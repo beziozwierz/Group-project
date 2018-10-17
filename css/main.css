@@ -1,0 +1,172 @@
+[class^="col-"] {float: left;}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.67%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.67%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.67%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.67%;}
+.col-12 {width: 100%;}
+
+body{
+    margin: 0;
+}
+
+#header-main-container{
+    position: relative;
+    height: 50px;
+    z-index: 10;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px #555555;
+}
+
+#toolbar-main-container{
+    position: relative;
+    height: 200px;
+    z-index: 7;
+    background-color: #cae6ff;
+    box-shadow: 0 2px 6px #555555;
+}
+
+#work-site-main-container{
+    position: absolute;
+    top: 250px;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #ffefbc;
+    border-right: solid 2px #888888;
+}
+
+#preview-main-container{
+    position: absolute;
+    top: 250px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffffff;
+}
+
+#toolbar-header-container{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#toolbar-welcome-text-container{
+    float: left;
+    text-align: center;
+    line-height: 164px;
+    font-size: 16px;
+}
+
+.toolbar-bookmark{
+    position: relative;
+    width: 100px;
+    float: left;
+    padding: 5px;
+    z-index: 20;
+    line-height: 20px;
+    font-size: 20px;
+    border: solid 3px;
+    box-shadow: 0 2px 6px #555555;
+}
+
+#toolbar-bookmark-html{
+    background-color: #f8a683;
+    border-color: #ed7d31;
+}
+
+#toolbar-bookmark-css{
+    background-color: #a1cc8c;
+    border-color: #70ad47;
+}
+
+#toolbar-bookmark-js{
+    background-color: #ffd57f;
+    border-color: #ffc000;
+}
+
+#toolbar-bookmark-grid{
+    background-color: #898989;
+    border-color: #000000;
+}
+
+#toolbar-bookmark-template{
+    background-color: #9cbde5;
+    border-color: #5b9bd5;
+}
+
+.toolbar-container{
+    position: relative;
+    z-index: 11;
+    height: 200px;
+    display: none;
+}
+
+#toolbar-container-html{
+    background-color: #ed7d31;
+}
+
+#toolbar-container-css{
+    background-color: #0fa600;
+}
+
+#toolbar-container-js{
+    background-color: #ffe339;
+}
+
+#toolbar-container-grid{
+    background-color: #777777;
+}
+
+#toolbar-container-template{
+    background-color: #6ed6ff;
+}
+
+#work-side-header-container{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.work-site-bookmark{
+    position: relative;
+    width: 100px;
+    float: left;
+    padding: 5px;
+    z-index: 20;
+    line-height: 20px;
+    font-size: 20px;
+    border: solid 3px;
+    box-shadow: 0 2px 6px #555555;
+}
+
+#work-site-bookmark-drop{
+    background-color: #f8a683;
+    border-color: #ed7d31;
+}
+
+#work-site-bookmark-code{
+    background-color: #a1cc8c;
+    border-color: #70ad47;
+}
+
+.work-site-container{
+    height: 100%;
+    background-color: #24231f;
+    border-right: solid 2px #888888;
+    display: none;
+}
+
+#work-site-container-drop{
+    background-color: #ffd9b1;
+    display: block;
+}
+
+#work-site-container-code{
+    background-color: #99cc5e;
+}
