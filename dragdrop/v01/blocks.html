@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+
+     <meta charset="utf-8">
+     <title>Moja templatka</title>
+
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+
+
+     <script src="script.js"></script>
+
+    <style>
+      #drag{background-color: grey; width: 120px; height: 150px;}
+      #container{background-color: lightgrey;width: 600px; height: 800px;}
+      .btn{border: 1px solid black; background-color: brown; width: 40px; height: 150px; float: left;}
+      .btn:hover{background-color: yellow;}
+      .bar{background-color: green; width: 600px; height: 30px;}
+      .bar:hover{background-color: yellow;}
+    </style>
+
+
+
+
+
+     <script>
+        rows = new Array();
+        rows[0] = new Row("bar");
+      </script>
+  </head>
+  <body onload="draw()">
+    <div id="main">
+      <div id="drag" draggable="true" ondragstart="drag(event)">
+      </div>
+
+      <div id="container">
+
+
+
+      </div>
+    </div>
+  </body>
+
+</html>

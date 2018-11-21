@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+
+     <meta charset="utf-8">
+     <title>Moja templatka</title>
+
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+
+
+<script src="script.js"></script>
+
+     <script>
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id); /* zmienić na div */
+        }
+        function createDiv(){
+          var w = document.getElementById("drag_width").value;
+          var h = document.getElementById("drag_height").value;
+          var id = document.getElementById("drag_id").value;
+
+          dragged = new Div(h,w,null);
+
+          document.getElementById("drag").style.width = w+"px";
+          document.getElementById("drag").style.height = h+"px";
+
+
+
+          //TODO: walidacja danych
+        }
+     </script>
+    <style>
+      #creator{background-color: #ccccff; width: 200px;
+                height: 200px; border: 5px solid  #000066;
+                padding: 10px;float:left;}
+      #created{background-color:  #ffe6e6; width: 400px;
+                height: 200px; border: 5px solid   #4d0000;
+                padding: 10px;float:left;}
+
+      #drag{background-color: grey; width: 100px; height: 100px; border: 4px dotted red;}
+      #model{clear:both; background-color: lightgrey;width: 600px; height: 800px;margin:2em;border: 2px solid black;}
+        .model { width: 100px; height: 100px; border: 1px solid black;}
+        /*.span {border: 1px dotted red; float: left; width: 10px;}
+        .bar {border: 1px dotted blue;height: 25px;}*/
+    </style>
+
+  </head>
+
+  <body onload="drawModel()">
+    <div id="main">
+      <div id="creator">
+        ID: <br/>
+        <input type="text" id="drag_id" /> <br/>
+        Width: <br/>
+        <input type="text" id="drag_width" /> <br/>
+        Height: <br/>
+        <input type="text" id="drag_height" /> <br/><br/>
+        <button onclick="createDiv()"> Create </button>
+      </div>
+
+      <div id="created">
+        <div id="drag" draggable="true" ondragstart="drag(event)">
+        </div>
+      </div>
+
+      <div id="model">
+      </div>
+
+    </div>
+  </body>
+
+</html>
