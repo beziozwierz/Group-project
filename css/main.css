@@ -25,7 +25,8 @@ body{
 }
 
 #toolbar-main-container{
-    position: relative;
+    position: absolute;
+    top: 50px;
     height: 200px;
     z-index: 7;
     background-color: #cae6ff;
@@ -51,9 +52,7 @@ body{
 }
 
 #toolbar-header-container{
-    position: relative;
-    top: 0;
-    left: 0;
+
 }
 
 #toolbar-welcome-text-container{
@@ -61,6 +60,7 @@ body{
     text-align: center;
     line-height: 164px;
     font-size: 16px;
+    width: 100%;
 }
 
 .toolbar-bookmark{
@@ -102,9 +102,12 @@ body{
 }
 
 .toolbar-container{
-    float: left;
+    position: relative;
+    top: -36px;
     width: 100%;
-    height: 164px;
+    height: 154px;
+    padding-top: 36px;
+    padding-bottom: 10px;
     overflow-y: scroll;
     display: none;
 }
@@ -129,11 +132,9 @@ body{
     background-color: #6ed6ff;
 }
 
-#work-side-header-container{
-    position: relative;
-    top: 0;
-    left: 0;
-}
+#work-site-header-container{
+
+ }
 
 .work-site-bookmark{
     position: relative;
@@ -145,6 +146,7 @@ body{
     font-size: 20px;
     border: solid 3px;
     box-shadow: 0 2px 6px #555555;
+    cursor: pointer;
 }
 
 #work-site-bookmark-drop{
@@ -196,4 +198,22 @@ body{
 .toolbar-element-css{
     background-color: #38a833;
     border: solid 3px #1e7920;
+}
+
+#edit-element-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 400px;
+    margin-top: -160px;
+    margin-left: -200px;
+    z-index: 30;
+    background-color: #e26c37;
+    border: solid 3px #2b26cd;
+    display: none;
+}
+
+#edit-element-close{
+    cursor: pointer;
 }

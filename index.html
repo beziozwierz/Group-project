@@ -5,13 +5,14 @@
     <title>WEB-Blocks</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/bookmarks.js"></script>
+    <script src="js/toolbar.js"></script>
 </head>
 <body>
     <div id="header-main-container" class="col-12">
 
     </div>
     <div id="toolbar-main-container" class="col-12">
-        <div id="toolbar-header-container">
+        <div id="toolbar-header-container" class="col-12">
             <div id="toolbar-bookmark-html" class="toolbar-bookmark" onclick="toolbox(0)">
                 HTML
             </div>
@@ -27,89 +28,86 @@
             <div id="toolbar-bookmark-template" class="toolbar-bookmark" onclick="toolbox(4)">
                 Templates
             </div>
-            <div id="toolbar-welcome-text-container" class="col-12">
-                Witaj w blokowym kreatorze stron! By zacząć wybierz element HTML i upuść go w polu roboczym poniżej.
-            </div>
-            <div id="toolbar-container-html" class="toolbar-container">
-                <!-- TU UMIEŚ ELEMENTY HTML -->
-                <div class="toolbar-element-container">
-                    <div class="toolbar-element-html toolbar-element">
-                        nagłówek
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        tytuł
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        ustawienia
-                    </div>
+        </div>
+        <div id="toolbar-welcome-text-container">
+            Welcome in block designed website creator! Choose HTML element and drop it to the work area.
+        </div>
+        <div id="toolbar-container-html" class="toolbar-container">
+            <!-- TU UMIEŚ ELEMENTY HTML -->
+            <div class="toolbar-element-container">
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    header
                 </div>
-                <div class="toolbar-element-container">
-                    <div class="toolbar-element-html toolbar-element">
-                        sekcja
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        hagłówek
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        nawigacja
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        artykuł
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        stopka
-                    </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    title
                 </div>
-                <div class="toolbar-element-container">
-                    <div class="toolbar-element-html toolbar-element">
-                        blok
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        lista
-                    </div>
-                    <div class="toolbar-element-html toolbar-element">
-                        linia
-                    </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    settings
                 </div>
             </div>
-            <div id="toolbar-container-css" class="toolbar-container">
-                <!-- TU UMIEŚ ELEMENTY CSS -->
-                <div class="toolbar-element-container">
-                    <div class="toolbar-element-css toolbar-element">
-                        pozycja
-                    </div>
-                    <div class="toolbar-element-css toolbar-element">
-                        odstęp
-                    </div>
-                    <div class="toolbar-element-css toolbar-element">
-                        wielkość
-                    </div>
-                    <div class="toolbar-element-css toolbar-element">
-                        margines
-                    </div>
-                    <div class="toolbar-element-css toolbar-element">
-                        odstęp wewnętrzny
-                    </div>
+            <div class="toolbar-element-container">
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    section
+                </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    header
+                </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    navigation
+                </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    article
+                </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    footer
                 </div>
             </div>
-            <div id="toolbar-container-js" class="toolbar-container">
-                <!-- TU UMIEŚ ELEMENTY JavaScript -->
+            <div class="toolbar-element-container">
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    div
+                </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    list
+                </div>
+                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                    line
+                </div>
             </div>
-            <div id="toolbar-container-grid" class="toolbar-container">
-                <!-- TU UMIEŚ GRIDY -->
+        </div>
+        <div id="toolbar-container-css" class="toolbar-container">
+            <!-- TU UMIEŚ ELEMENTY CSS -->
+            <div class="toolbar-element-container">
+                <div class="toolbar-element-css toolbar-element">
+                    position
+                </div>
+                <div class="toolbar-element-css toolbar-element">
+                    margin
+                </div>
+                <div class="toolbar-element-css toolbar-element">
+                    size
+                </div>
+                <div class="toolbar-element-css toolbar-element">
+                    padding
+                </div>
             </div>
-            <div id="toolbar-container-template" class="toolbar-container">
-                <!-- TU UMIEŚ SZABLONY -->
-            </div>
+        </div>
+        <div id="toolbar-container-js" class="toolbar-container">
+            <!-- TU UMIEŚ ELEMENTY JavaScript -->
+        </div>
+        <div id="toolbar-container-grid" class="toolbar-container">
+            <!-- TU UMIEŚ GRIDY -->
+        </div>
+        <div id="toolbar-container-template" class="toolbar-container">
+            <!-- TU UMIEŚ SZABLONY -->
         </div>
     </div>
     <div id="work-site-main-container" class="col-6">
         <div id="work-site-header-container" class="col-12">
             <div id="work-site-bookmark-drop" class="work-site-bookmark" onclick="work_site(0)">
-                Schemat
+                Scheme
             </div>
             <div id="work-site-bookmark-code" class="work-site-bookmark" onclick="work_site(1)">
-                Kod
+                Code
             </div>
         </div>
         <div id="work-site-container-drop" class="work-site-container">
@@ -121,6 +119,14 @@
     </div>
     <div id="preview-main-container" class="col-6">
 
+    </div>
+    <div id="edit-element-container">
+        <div id="edit-element-title-container">
+
+        </div>
+        <div id="edit-element-close" onclick="close_me('edit-element-container')">
+            ×
+        </div>
     </div>
 </body>
 </html>
