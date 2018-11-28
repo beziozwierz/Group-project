@@ -1,4 +1,5 @@
 function toolbox(option){
+    document.getElementById("toolbar-welcome-text-container").style.display = "none";
     var elements = document.getElementsByClassName("toolbar-container");
     for (var i = 0; i < elements.length; i++ ) {
         elements[i].style.display = "none";
@@ -19,6 +20,9 @@ function toolbox(option){
         case 4:
             document.getElementById("toolbar-container-template").style.display = "block";
             break;
+        case 5:
+            document.getElementById("toolbar-welcome-text-container").style.display = "block";
+            break;
     }
 }
 
@@ -35,4 +39,9 @@ function work_site(option){
             document.getElementById("work-site-container-code").style.display = "block";
             break;
     }
+}
+
+function close_me(me) {
+    document.getElementById(me).style.display = "none";
+
 }
