@@ -12,8 +12,31 @@
 .col-11 {width: 91.67%;}
 .col-12 {width: 100%;}
 
+@font-face {
+    font-family: 'Raleway-Medium';
+    src: url('../fonts/Raleway-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Raleway-Bold';
+    src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+
+}
+
+@font-face {
+    font-family: 'Raleway-SemiBold';
+    src: url('../fonts/Raleway-SemiBold.ttf') format('truetype');
+
+}
+
+@font-face {
+    font-family: 'Raleway-ExtraBold';
+    src: url('../fonts/Raleway-ExtraBold.ttf') format('truetype');
+}
+
 body{
     margin: 0;
+    font-family: 'Raleway-SemiBold', sans-serif;
 }
 
 #header-main-container{
@@ -70,7 +93,7 @@ body{
     padding: 5px;
     z-index: 20;
     line-height: 20px;
-    font-size: 20px;
+    font-size: 18px;
     border: solid 3px;
     box-shadow: 0 2px 6px #555555;
     cursor: pointer;
@@ -143,7 +166,7 @@ body{
     padding: 5px;
     z-index: 20;
     line-height: 20px;
-    font-size: 20px;
+    font-size: 18px;
     border: solid 3px;
     box-shadow: 0 2px 6px #555555;
     cursor: pointer;
@@ -216,4 +239,19 @@ body{
 
 #edit-element-close{
     cursor: pointer;
+}
+
+#edit-element-title-container{
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#edit-element-close{
+    float: right;
+    position: relative;
+    top: -42px;
+    right: 14px;
+    line-height: 32px;
+    font-size: 32px;
 }
