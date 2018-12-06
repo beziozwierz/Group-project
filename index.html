@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>WEB-Blocks</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/drag.css">
+    <script src="js/script.js"></script>
     <script src="js/bookmarks.js"></script>
     <script src="js/toolbar.js"></script>
 </head>
-<body>
+<body onload="draw()">
     <div id="header-main-container" class="col-12">
 
     </div>
-    <div id="toolbar-main-container" class="col-12">
+    <div id="toolbar-main-container" class="col-6">
         <div id="toolbar-header-container" class="col-12">
             <div id="toolbar-bookmark-html" class="toolbar-bookmark" onclick="toolbox(0)">
                 HTML
@@ -76,7 +78,7 @@
         </div>
         <div id="toolbar-container-css" class="toolbar-container">
             <!-- TU UMIEŚ ELEMENTY CSS -->
-            <div class="toolbar-element-container">
+            <!--<div class="toolbar-element-container">
                 <div class="toolbar-element-css toolbar-element">
                     position
                 </div>
@@ -89,6 +91,8 @@
                 <div class="toolbar-element-css toolbar-element">
                     padding
                 </div>
+            </div> -->
+            <div id="styler">
             </div>
         </div>
         <div id="toolbar-container-js" class="toolbar-container">
@@ -101,6 +105,10 @@
             <!-- TU UMIEŚ SZABLONY -->
         </div>
     </div>
+    <div id="dragarea" class="col-6">
+      <div id="drag" draggable="true" ondragstart="drag(event)">
+      </div>
+    </div>
     <div id="work-site-main-container" class="col-6">
         <div id="work-site-header-container" class="col-12">
             <div id="work-site-bookmark-drop" class="work-site-bookmark" onclick="work_site(0)">
@@ -111,7 +119,9 @@
             </div>
         </div>
         <div id="work-site-container-drop" class="work-site-container">
+          <div id="model" >
 
+          </div>
         </div>
         <div id="work-site-container-code" class="work-site-container">
 
