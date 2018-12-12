@@ -34,6 +34,7 @@ function toolbar_element(option){
           '<input type="text" id="drag_height" /> <br/>'+
           '<button onclick="createDiv()"> Create </button>'+
           '</div>';
+          //getCreatorCode()
             break;
         case "list":
             document.getElementById("edit-element-title-container").innerHTML = "";
