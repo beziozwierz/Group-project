@@ -8,34 +8,41 @@ function drag(ev) {
 }
 function allowDrop(ev) {
   ev.preventDefault();
-  /* highlight */
-  //TODO: klasami/jquery
+
+  //highlighting
   var rect = ev.target.getBoundingClientRect();
   var condition = (ev.clientY - rect.top)/(rect.bottom - rect.top);
   if(condition<0.2){ //over top of div
-    ev.target.style.borderTop = "20px double green";
-    ev.target.style.borderBottom = "1px solid black";
-    ev.target.style.backgroundImage = "";
-    //ev.target.style.backgroundImage = "linear-gradient(black, white)";
+    $( ev.target ).css({
+      'borderTop': "20px double black",
+      'borderBottom': "1px solid black",
+      'backgroundImage': ""
+    });
   }else if(condition<0.8){ //over middle of div
-    ev.target.style.borderTop = "1px solid black";
-    ev.target.style.borderBottom = "1px solid black";
-    ev.target.style.backgroundImage = "radial-gradient(green, lightgrey, lightgrey)";
-  }else{ //over bottom of div
-    ev.target.style.borderTop = "1px solid black";
-    ev.target.style.borderBottom = "20px double green";
-    ev.target.style.backgroundImage = "";
-    //ev.target.style.backgroundImage = "linear-gradient(white, black)";
+    $( ev.target ).css({
+      'borderTop': "1px solid black",
+      'borderBottom': "1px solid black",
+      'backgroundImage': "radial-gradient(black, lightgrey, lightgrey)"
+    });
+  }else{  //over bottom of the div
+    $( ev.target ).css({
+      'borderBottom': "20px double black",
+      'borderTop': "1px solid black",
+      'backgroundImage': ""
+    });
   }
 }
+
 function leave(event) { //reset div style (no highlight)
-  //TODO: klasami
-  event.target.style.backgroundImage = "";
-  event.target.style.border = "1px solid black";
+  $( event.target ).css({
+    'border': "1px solid black",
+    'backgroundImage': ""
+  });
 }
 
 function drop(ev) {
   ev.preventDefault();
+  ev.stopPropagation();
 
   var div = model;
   var index;
@@ -53,7 +60,7 @@ function drop(ev) {
     div.parent.inner.splice(index,0,new Div(dragged.height, dragged.width, div.parent));
   }else if(condition<0.8){ //middle of div drop
     div.inner[div.inner.length] = new Div(dragged.height, dragged.width, div);
-  }else if(condition <= 1){ // <=1 (not else) important to not trigger parent (cond = inf for parent)
+  }else {
     div.parent.inner.splice(index+1,0,new Div(dragged.height, dragged.width, div.parent));
   }
   draw();

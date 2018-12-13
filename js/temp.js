@@ -1,4 +1,5 @@
-function editStyle(element){  //TODO: parent is affected when clicked on nested div
+function editStyle(event,element){  //TODO: parent is affected when clicked on nested div
+  event.stopPropagation();
   var div = model;
   var path = translateName(element.id);
   for(var i = 0 ; i < path.length ; i++){
@@ -47,4 +48,18 @@ function saveChanges(){
 
   draw();
   //TODO: walidacja danych
+}
+
+function removeFromTree(event,id){
+  event.stopPropagation();
+
+  var div = model;
+  var index;
+  var path = translateName(id);
+  for(var i = 0 ; i < path.length ; i++){
+    div = div.inner[path[i]];
+    index = path[i];
+  }
+  div.parent.inner.splice(index,1);
+  draw();
 }

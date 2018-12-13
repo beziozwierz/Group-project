@@ -291,3 +291,41 @@ body{
   margin-left: 30px;
   margin-top: 40px;
 }
+
+
+.model-div {
+  border: 2px solid black;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.model-options-bar{
+  position: relative;
+  border-bottom: 1px dotted black;
+  width:auto;
+  height: 40px;
+  cursor: pointer;
+}
+.edit-style-btn{
+  width:49%;
+  height: 100%;
+  text-align: center;
+  border-right: 3px solid black;
+  float: left;
+}
+.edit-style-btn:hover {
+  color: blue;
+  background-color: white;
+}
+.remove-div-btn{
+  width:49%;
+  height: 100%;
+  text-align: center;
+  float: left;
+}
+.remove-div-btn::after{
+  clear:both;
+}
+.remove-div-btn:hover {
+  color: blue;
+  background-color: white;
+}
