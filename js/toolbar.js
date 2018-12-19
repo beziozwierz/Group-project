@@ -28,6 +28,8 @@ function toolbar_element(option){
         case "div":
         document.getElementById("edit-element-title-container").innerHTML = ""+
           '<div id="creator">'+
+          'ID: <br/>'+
+          '<input type="text" id="drag_id" /> <br/>'+
           'Width: <br/>'+
           '<input type="text" id="drag_width" /> <br/>'+
           'Height: <br/>'+

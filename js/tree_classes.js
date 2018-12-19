@@ -1,6 +1,7 @@
 class Div {
   constructor(height, width, parent) {
     this.inner = [];
+    this.id = null;
     this.parent = parent;
     this.height = height;
     this.width = width;

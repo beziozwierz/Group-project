@@ -36,7 +36,9 @@ function work_site(option){
             document.getElementById("work-site-container-drop").style.display = "block";
             break;
         case 1:
-            document.getElementById("work-site-container-code").style.display = "block";
+            var elem = document.getElementById("work-site-container-code")
+            elem.style.display = "block";
+            console.log(getPageCode());
             break;
     }
 }

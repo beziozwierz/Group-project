@@ -22,17 +22,6 @@ function editStyle(event,element){  //TODO: parent is affected when clicked on n
   elem.innerHTML = code;
 }
 
-function createDiv(){
-  var w = document.getElementById("drag_width").value;
-  var h = document.getElementById("drag_height").value;
-  //var id = document.getElementById("drag_id").value;
-  dragged = new Div(h,w,null);
-
-  document.getElementById("drag").style.width = w+"px";
-  document.getElementById("drag").style.height = h+"px";
-
-  //TODO: walidacja danych
-}
 function saveChanges(){
   var w = document.getElementById("editW").value;
   var h = document.getElementById("editH").value;
@@ -50,6 +39,20 @@ function saveChanges(){
   //TODO: walidacja danych
 }
 
+
+function createDiv(){
+  var w = document.getElementById("drag_width").value;
+  var h = document.getElementById("drag_height").value;
+  var id = document.getElementById("drag_id").value;
+  dragged = new Div(h,w,null);
+  dragged.id = id;
+  document.getElementById("drag").style.width = w+"px";
+  document.getElementById("drag").style.height = h+"px";
+
+
+  //TODO: walidacja danych
+}
+
 function removeFromTree(event,id){
   event.stopPropagation();
 
@@ -62,4 +65,30 @@ function removeFromTree(event,id){
   }
   div.parent.inner.splice(index,1);
   draw();
+}
+
+
+
+function getPageCode(){
+  code = getInnerPageCode(model,0);
+  //console.log(code);
+  return code;
+}
+function getInnerPageCode(div, depth){
+  var code = "";
+  for(var i = 0; i < div.inner.length ; i++){
+    for(var j=0;j<depth;j++){ code+="\t"; }
+
+    code += '<div';
+    if(div.inner[i].id == null){
+      code+='>\n';
+    }else{
+      code+=' id="' + div.inner[i].id +'">\n';
+    }
+    code+=getInnerPageCode(div.inner[i],depth+1);
+
+    for(var j=0;j<depth;j++){ code+="\t"; }
+    code+='</div>\n';
+  }
+  return code;
 }

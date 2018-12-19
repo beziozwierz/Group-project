@@ -57,11 +57,23 @@ function drop(ev) {
   var condition = (ev.clientY - rect.top)/(rect.bottom - rect.top); //position relative to parent
 
   if(condition<0.2){ //top of div drop
-    div.parent.inner.splice(index,0,new Div(dragged.height, dragged.width, div.parent));
+    temp = new Div(dragged.height, dragged.width, div.parent);
+    if(dragged.id != null){
+      temp.id = dragged.id;
+    }
+    div.parent.inner.splice(index,0,temp);
   }else if(condition<0.8){ //middle of div drop
-    div.inner[div.inner.length] = new Div(dragged.height, dragged.width, div);
+    temp = new Div(dragged.height, dragged.width, div);
+    if(dragged.id != null){
+      temp.id = dragged.id;
+    }
+    div.inner[div.inner.length] = temp;//new Div(dragged.height, dragged.width, div);
   }else {
-    div.parent.inner.splice(index+1,0,new Div(dragged.height, dragged.width, div.parent));
+    temp = new Div(dragged.height, dragged.width, div.parent);
+    if(dragged.id != null){
+      temp.id = dragged.id;
+    }
+    div.parent.inner.splice(index+1,0,temp);
   }
   draw();
 }

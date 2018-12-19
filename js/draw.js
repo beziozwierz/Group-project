@@ -2,7 +2,7 @@ function draw() {
   var code = getInnercode(model,0,"model");
   var elem = document.getElementById("model");
   elem.innerHTML =  code;
-  console.log(code)
+  //console.log(code)
 }
 
 function getInnercode(div, depth, id){
