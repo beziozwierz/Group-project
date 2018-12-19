@@ -3,8 +3,9 @@ function translateName(id){
   return path;
 }
 
-function drag(ev) {
+function drag(ev, type) {
   ev.dataTransfer.setData("text", ev.target.id);
+  global_name = type;
 }
 function allowDrop(ev) {
   ev.preventDefault();
@@ -56,12 +57,13 @@ function drop(ev) {
   var rect = ev.target.getBoundingClientRect();
   var condition = (ev.clientY - rect.top)/(rect.bottom - rect.top); //position relative to parent
 
+
   if(condition<0.2){ //top of div drop
-    div.parent.inner.splice(index,0,new Div(dragged.height, dragged.width, div.parent));
+    div.parent.inner.splice(index,0,new Div(global_name, dragged.height, dragged.width, div.parent));
   }else if(condition<0.8){ //middle of div drop
-    div.inner[div.inner.length] = new Div(dragged.height, dragged.width, div);
+    div.inner[div.inner.length] = new Div(global_name, dragged.height, dragged.width, div);
   }else {
-    div.parent.inner.splice(index+1,0,new Div(dragged.height, dragged.width, div.parent));
+    div.parent.inner.splice(index+1,0,new Div(global_name, dragged.height, dragged.width, div.parent));
   }
   draw();
 }

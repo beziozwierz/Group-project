@@ -26,10 +26,10 @@ function createDiv(){
   var w = document.getElementById("drag_width").value;
   var h = document.getElementById("drag_height").value;
   //var id = document.getElementById("drag_id").value;
-  dragged = new Div(h,w,null);
+  dragged = new Div('Name', h,w,null);
 
-  document.getElementById("drag").style.width = w+"px";
-  document.getElementById("drag").style.height = h+"px";
+  document.getElementById("drag").style.width = w;
+  document.getElementById("drag").style.height = h;
 
   //TODO: walidacja danych
 }
