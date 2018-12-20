@@ -1,5 +1,5 @@
 class Div {
-  constructor(type, height, width, parent) {
+  constructor(type, width, height, parent) {
     this.inner = [];
     this.type = type;
     this.parent = parent;
@@ -11,7 +11,7 @@ class Div {
 
 var global_name = "HTML";
 
-var dragged = new Div(global_name, '100px','100px',null);
+var dragged = new Div(global_name, '100','50px',null);
 var pathToEdited = null;
 model = new Div('Name', 0,0,null);
-model.inner[0] = new Div('MainModel', '100%','100%',model);
+model.inner[0] = new Div('MainModel', '100','100%',model);

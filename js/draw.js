@@ -18,13 +18,14 @@ function getInnercode(div, depth, id){
            'ondragleave="leave(event)" '+
            //' onclick="editStyle(event,this)"' +
            ' style="'+
-           ' width: ' + div.inner[i].width+';'+
-           ' height: ' + div.inner[i].height+';';
+           ' width: ' + div.inner[i].width+'%;';
+       if(div.inner[i].height !== 'DEFAULT')
+           code += ' height: ' + div.inner[i].height+';';
        if( div.inner[i].float != null){
          clear = true;
          code += ' float: ' + div.inner[i].float +'">\n';
        }else{
-           if(clear == true){
+           if(clear === true){
              code += 'clear: both; ">';
              clear = false;
            }else{
