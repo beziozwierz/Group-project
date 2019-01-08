@@ -61,7 +61,6 @@ function drop(ev) {
   var rect = ev.target.getBoundingClientRect();
   var condition = (ev.clientY - rect.top)/(rect.bottom - rect.top); //position relative to parent
 
-
     if(div.type !== "MainModel"){
       if(condition<0.2){ //top of div drop
           div.parent.inner.splice(index,0,new Div(global_name, 80 / (div.parent.inner.length + 1), dragged.height, div.parent));

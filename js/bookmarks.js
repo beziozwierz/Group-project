@@ -26,6 +26,27 @@ function toolbox(option){
     }
 }
 
+function parse_string(str){
+    var str2 = "";
+    for(var i = 0; i<str.length;i++){
+                if(str.charAt(i) == '\n'){
+                    str2 += "<br />";
+                }else if(str.charAt(i) == '\t')
+                {
+                    str2 += "&emsp;";
+                }else if(str.charAt(i) == '<'){
+                    str2 += "&lt;"
+                }else if(str.charAt(i) == '>'){
+                    str2 += "&gt;"
+                }
+                else{
+                str2 += str.charAt(i);
+            }
+            }
+            return str2;
+
+
+}
 function work_site(option){
     var elements = document.getElementsByClassName("work-site-container");
     for (var i = 0; i < elements.length; i++ ) {
@@ -36,7 +57,12 @@ function work_site(option){
             document.getElementById("work-site-container-drop").style.display = "block";
             break;
         case 1:
-            document.getElementById("work-site-container-code").style.display = "block";
+            var elem = document.getElementById("work-site-container-code")
+            elem.style.display = "block";
+            var str = "<pre><code class=\"html\">" + parse_string(getPageCode()) + "</code></pre>";
+            elem.innerHTML =str;
+            hljs.highlightBlock(elem);
+
             break;
     }
 }
