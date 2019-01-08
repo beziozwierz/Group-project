@@ -179,8 +179,8 @@ body{
 }
 
 #work-site-bookmark-code{
-    background-color: #a1cc8c;
-    border-color: #70ad47;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 
 .work-site-container{
@@ -196,9 +196,9 @@ body{
     height: 700px;
 }
 
-#work-site-container-code{
+/*#work-site-container-code{
     background-color: #99cc5e;
-}
+}*/
 
 .toolbar-element-container{
     width: 130px;
