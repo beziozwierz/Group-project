@@ -5,6 +5,19 @@ function draw() {
    console.log(code)
 }
 
+
+function zoom(event,caller){
+  event.stopPropagation();
+  code = '<div id="return-to-model" onclick="draw()" >POWRÓT DO MODELU</div>';
+  code += getInnercode(parent,0,caller.id);
+  //var code = getInnercode(model,0,"model");
+  //elem.innerHTML =  code;
+  var elem = document.getElementById("model");
+  elem.innerHTML =  code;
+
+
+}
+
 function getInnercode(div, depth, id){
    var code = "";
 
@@ -45,10 +58,11 @@ function getEditionPanelCode(type){
       code='<div class="model-options-bar">\n';
 
         code += '<div class="model-element-title">' + type + '</div>'
-
-        code+='<div class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)">ZOOM</div>';
-        code+='<div class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)">EDIT</div>';
-        code+='<div class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)">DELETE</div>';
+        if(type!=="MainModel"){
+          code+='<div class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)">ZOOM</div>';
+          code+='<div class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)">EDIT</div>';
+          code+='<div class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)">DELETE</div>';
+        }
       code+='</div>\n'
       return code;
 }
