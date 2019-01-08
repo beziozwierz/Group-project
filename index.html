@@ -18,7 +18,7 @@
     <div id="header-main-container" class="col-12">
 
     </div>
-    <div id="toolbar-main-container" class="col-6">
+    <div id="toolbar-main-container" class="col-12">
         <div id="toolbar-header-container" class="col-12">
             <div id="toolbar-bookmark-html" class="toolbar-bookmark" onclick="toolbox(0)">
                 HTML
@@ -42,41 +42,41 @@
         <div id="toolbar-container-html" class="toolbar-container">
             <!-- TU UMIEŚ ELEMENTY HTML -->
             <div class="toolbar-element-container">
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())" >
                     header
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     title
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     settings
                 </div>
             </div>
             <div class="toolbar-element-container">
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     section
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     header
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     navigation
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     article
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     footer
                 </div>
             </div>
             <div class="toolbar-element-container">
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     div
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     list
                 </div>
-                <div class="toolbar-element-html toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
                     line
                 </div>
             </div>
@@ -109,10 +109,6 @@
         <div id="toolbar-container-template" class="toolbar-container">
             <!-- TU UMIEŚ SZABLONY -->
         </div>
-    </div>
-    <div id="dragarea" class="col-6">
-      <div id="drag" draggable="true" ondragstart="drag(event)">
-      </div>
     </div>
     <div id="work-site-main-container" class="col-6">
         <div id="work-site-header-container" class="col-12">

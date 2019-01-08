@@ -47,5 +47,5 @@ function toolbar_element(option){
     }
 
     document.getElementById("edit-element-container").style.display = "block";
-    //document.getElementById("edit-element-title-container").innerText = option.innerText;
+    document.getElementById("edit-element-title-container").innerText = option.innerText.toUpperCase();
 }

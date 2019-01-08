@@ -22,6 +22,18 @@ function editStyle(event,element){  //TODO: parent is affected when clicked on n
   elem.innerHTML = code;
 }
 
+function createDiv(){
+  var w = document.getElementById("drag_width").value;
+  var h = document.getElementById("drag_height").value;
+  //var id = document.getElementById("drag_id").value;
+  dragged = new Div('Name', h,w,null);
+
+  document.getElementById("drag").style.width = w;
+  document.getElementById("drag").style.height = h;
+
+  //TODO: walidacja danych
+}
+
 function saveChanges(){
   var w = document.getElementById("editW").value;
   var h = document.getElementById("editH").value;
@@ -79,7 +91,8 @@ function getInnerPageCode(div, depth){
   for(var i = 0; i < div.inner.length ; i++){
     for(var j=0;j<depth;j++){ code+="\t"; }
 
-    code += '<div';
+
+    code += '<'+div.inner[i].type;
     if(div.inner[i].id == null){
       code+='>\n';
     }else{
@@ -88,7 +101,7 @@ function getInnerPageCode(div, depth){
     code+=getInnerPageCode(div.inner[i],depth+1);
 
     for(var j=0;j<depth;j++){ code+="\t"; }
-    code+='</div>\n';
+    code+='</'+div.inner[i].type+'>\n';
   }
   return code;
 }
