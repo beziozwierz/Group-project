@@ -8,6 +8,8 @@ function drag(ev, type) {
   global_name = type;
 }
 function allowDrop(ev) {
+    if(ev.target.className === "model-element-title")
+        return;
   ev.preventDefault();
 
   //highlighting
@@ -42,6 +44,8 @@ function leave(event) { //reset div style (no highlight)
 }
 
 function drop(ev) {
+    if(ev.target.className === "model-element-title")
+        return;
   ev.preventDefault();
   ev.stopPropagation();
 
@@ -58,24 +62,33 @@ function drop(ev) {
   var condition = (ev.clientY - rect.top)/(rect.bottom - rect.top); //position relative to parent
 
 
-  if(condition<0.2){ //top of div drop
-      div.parent.inner.splice(index,0,new Div(global_name, 80 / (div.parent.inner.length + 1), dragged.height, div.parent));
-      div.parent.height = 'DEFAULT';
-      for(var i = 0; i < div.parent.inner.length; i++){
-          div.parent.inner[i].width = 80 / div.parent.inner.length;
+    if(div.type !== "MainModel"){
+      if(condition<0.2){ //top of div drop
+          div.parent.inner.splice(index,0,new Div(global_name, 80 / (div.parent.inner.length + 1), dragged.height, div.parent));
+          div.parent.height = 'DEFAULT';
+          for(var i = 0; i < div.parent.inner.length; i++){
+              div.parent.inner[i].width = 90;
+          }
+      }else if(condition<0.8){ //middle of div drop
+          div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
+          div.height = 'DEFAULT';
+          for(var i = 0; i < div.inner.length; i++){
+              div.inner[i].width = 90;
+          }
+      }else{
+          div.parent.inner.splice(index+1,0,new Div(global_name, 80 / div.parent.inner.length, dragged.height, div.parent));
+          div.parent.height = 'DEFAULT';
+          for(var i = 0; i < div.parent.inner.length; i++){
+              div.parent.inner[i].width = 90;
+          }
       }
-  }else if(condition<0.8){ //middle of div drop
-      div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
-      div.height = 'DEFAULT';
-      for(var i = 0; i < div.inner.length; i++){
-          div.inner[i].width = 80 / div.inner.length;
-      }
-  }else {
-      div.parent.inner.splice(index+1,0,new Div(global_name, 80 / div.parent.inner.length, dragged.height, div.parent));
-      div.parent.height = 'DEFAULT';
-      for(var i = 0; i < div.parent.inner.length; i++){
-          div.parent.inner[i].width = 80 / div.parent.inner.length;
-      }
-  }
+    }
+    else{
+        div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
+        div.height = 'DEFAULT';
+        for(var i = 0; i < div.inner.length; i++){
+            div.inner[i].width = 90;
+        }
+    }
   draw();
 }
