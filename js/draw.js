@@ -32,8 +32,7 @@ function getInnercode(div, depth, id){
              code += '">\n';
            }
        }
-       code += '<div class="model-element-title">' + div.inner[i].type + '</div>'
-   //  code+=getEditionPanelCode();
+       code+=getEditionPanelCode(div.inner[i].type);
        code+=getInnercode(div.inner[i],depth+1,id+'_'+i);
 
        for(var j=0;j<depth;j++){ code+="\t"; }
@@ -42,10 +41,14 @@ function getInnercode(div, depth, id){
        return code;
 }
 
-function getEditionPanelCode(){
+function getEditionPanelCode(type){
       code='<div class="model-options-bar">\n';
-      code+='<div class="edit-style-btn" onclick="editStyle(event,this.parentNode.parentNode)">EDIT</div>';
-      code+='<div class="remove-div-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)">×<br/>DELETE</div>';
+
+        code += '<div class="model-element-title">' + type + '</div>'
+
+        code+='<div class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)">ZOOM</div>';
+        code+='<div class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)">EDIT</div>';
+        code+='<div class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)">DELETE</div>';
       code+='</div>\n'
       return code;
 }

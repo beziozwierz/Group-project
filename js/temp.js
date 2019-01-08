@@ -91,7 +91,8 @@ function getInnerPageCode(div, depth){
   for(var i = 0; i < div.inner.length ; i++){
     for(var j=0;j<depth;j++){ code+="\t"; }
 
-    code += '<div';
+
+    code += '<'+div.inner[i].type;
     if(div.inner[i].id == null){
       code+='>\n';
     }else{
@@ -100,7 +101,7 @@ function getInnerPageCode(div, depth){
     code+=getInnerPageCode(div.inner[i],depth+1);
 
     for(var j=0;j<depth;j++){ code+="\t"; }
-    code+='</div>\n';
+    code+='</'+div.inner[i].type+'>\n';
   }
   return code;
 }
