@@ -11,10 +11,9 @@
     <script src="js/temp.js"></script>  <!-- temporarly for div creation/edition*/ -->
     <script src="js/bookmarks.js"></script>
     <script src="js/toolbar.js"></script>
-    <script src="js/preview.js"></script>
-    <link rel="stylesheet" href="/syntaxHighlighter/styles/atom-one-dark.css">
-    <script src="/syntaxHighlighter/highlight.pack.js"></script>
-
+    <link rel="stylesheet" href="syntaxHighlighter/styles/atom-one-dark.css">
+    <script src="syntaxHighlighter/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body onload="draw()">
     <div id="header-main-container" class="col-12">
@@ -85,7 +84,15 @@
         </div>
         <div id="toolbar-container-css" class="toolbar-container">
             <!-- TU UMIEŚ ELEMENTY CSS -->
-            <!--<div class="toolbar-element-container">
+            <div class="toolbar-element-container">
+                <div class="toolbar-element-css big-toolbar-element" onclick="toolbar_element(this)">
+                    ID
+                </div>
+                <div class="toolbar-element-css big-toolbar-element" onclick="toolbar_element(this)">
+                    Class
+                </div>
+            </div>
+            <div class="toolbar-element-container">
                 <div class="toolbar-element-css toolbar-element">
                     position
                 </div>
@@ -98,7 +105,7 @@
                 <div class="toolbar-element-css toolbar-element">
                     padding
                 </div>
-            </div> -->
+            </div>
             <div id="styler">
             </div>
         </div>
@@ -129,19 +136,18 @@
         <div id="work-site-container-code" class="/syntaxHighlighter/styles/atom-one-dark.css">
         </div>
     </div>
-    <div id="preview-main-container" class="col-6" >
-                <body>
-          <p>Click <a href="javascript:makeDocument()">here</a> to see preview</p>
-          <iframe id="theFrame" src="about:blank" width="100%" height="100%" />
-        </body>
+    <div id="preview-main-container" class="col-6">
+
     </div>
     <div id="edit-element-container">
-      <div id="edit-element-close" onclick="close_me('edit-element-container')">
-          ×
-      </div>
+        <div id="edit-element-close" onclick="close_me('edit-element-container')">
+            ×
+        </div>
         <div id="edit-element-title-container">
 
         </div>
+        <div class="edit-element-element-title"></div>
+        <input id="edit-element-name-container" type="text" name="edit-name">
     </div>
 </body>
 </html>

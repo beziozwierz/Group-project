@@ -78,9 +78,9 @@ function getEditionPanelCode(type){
 
         code += '<div class="model-element-title">' + type + '</div>'
         if(type!=="MainModel"){
-          code+='<div class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)">ZOOM</div>';
-          code+='<div class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)">EDIT</div>';
-          code+='<div class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)">DELETE</div>';
+          code+='<img src="icons/zoom.png" class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)"/>';
+          code+='<img src="icons/edit.png" class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)"/>';
+          code+='<img src="icons/delete.png" class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)"/>';
         }
       code+='</div>\n'
       return code;

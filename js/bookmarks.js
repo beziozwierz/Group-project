@@ -55,10 +55,12 @@ function work_site(option){
     }
     switch(option) {
         case 0:
+            document.getElementById("work-site-container-code").style.display = "none";
             document.getElementById("work-site-container-drop").style.display = "block";
             break;
         case 1:
-            var elem = document.getElementById("work-site-container-code")
+            document.getElementById("work-site-container-drop").style.display = "none";
+            var elem = document.getElementById("work-site-container-code");
             elem.style.display = "block";
             var str = "<pre><code class=\"html\">" + parse_string(getPageCode()) + "</code></pre>";
             elem.innerHTML =str;

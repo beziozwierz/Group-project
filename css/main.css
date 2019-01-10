@@ -215,6 +215,18 @@ body{
     cursor: pointer;
 }
 
+.big-toolbar-element{
+    width: 70px;
+    margin: 5px 100% 0 10px;
+    padding: 3px 10px;
+    float: left;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
 .toolbar-element-html{
     background-color: #e26c37;
     border: solid 3px #cd440e;
@@ -256,6 +268,13 @@ body{
     right: 14px;
     line-height: 32px;
     font-size: 32px;
+}
+
+#edit-element-name-container{
+    position: relative;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
 }
 
 #creator{
@@ -302,7 +321,7 @@ body{
   position: relative;
   border-bottom: 1px dotted black;
   width:auto;
-  height: 40px;
+  height: 20px;
   cursor: pointer;
 }
 .model-element-title{
@@ -310,10 +329,10 @@ body{
   width: 40%
 }
 .model-options-bar-btn{
-  width:10%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
   text-align: center;
-  border-right: 3px solid black;
+    margin-left: 2px;
   float: right;
 }
 .model-options-bar-btn:hover {
