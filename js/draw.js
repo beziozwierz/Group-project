@@ -1,21 +1,40 @@
 function draw() {
-   var code = getInnercode(model,0,"model");
+  var code = "";
+  if(zoomed){
+    code = '<div id="return-to-model" onclick="unzoom()" >POWRÓT DO MODELU</div>';
+  }
+   code += getInnercode(viewpoint_root,0,viewpoint_name);
    var elem = document.getElementById("model");
    elem.innerHTML =  code;
    console.log(code)
 }
 
 
-function zoom(event,caller){
+function zoom(event,caller_div){
   event.stopPropagation();
-  code = '<div id="return-to-model" onclick="draw()" >POWRÓT DO MODELU</div>';
-  code += getInnercode(parent,0,caller.id);
-  //var code = getInnercode(model,0,"model");
+  //code = '<div id="return-to-model" onclick="draw()" >POWRÓT DO MODELU</div>';
+  //console.log(parent_id);
+  //znajdujemy caller div w drzewie
+  var div = model;
+  path = translateName(caller_div.id);
+  for(var i = 0 ; i < path.length-1; i++){
+    div = div.inner[path[i]];
+    //index = path[i];
+  }
+  // found div in our model and know it position in parent (index)
+  //code += getInnercode(div,0,caller_div.parentNode.id);
+  viewpoint_root = div;
+  viewpoint_name = caller_div.parentNode.id;
+  zoomed = true;
+  //var elem = document.getElementById("model");
   //elem.innerHTML =  code;
-  var elem = document.getElementById("model");
-  elem.innerHTML =  code;
-
-
+  draw();
+}
+function unzoom(){
+  viewpoint_name = "model";
+  viewpoint_root = model;
+  zoomed = false;
+  draw();
 }
 
 function getInnercode(div, depth, id){
