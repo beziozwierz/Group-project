@@ -11,8 +11,10 @@
     <script src="js/temp.js"></script>  <!-- temporarly for div creation/edition*/ -->
     <script src="js/bookmarks.js"></script>
     <script src="js/toolbar.js"></script>
+    <script src="js/preview.js"></script>
     <link rel="stylesheet" href="/syntaxHighlighter/styles/atom-one-dark.css">
     <script src="/syntaxHighlighter/highlight.pack.js"></script>
+    <div w3-include-html="preview.html"></div>
 </head>
 <body onload="draw()">
     <div id="header-main-container" class="col-12">
@@ -127,8 +129,11 @@
         <div id="work-site-container-code" class="/syntaxHighlighter/styles/atom-one-dark.css">
         </div>
     </div>
-    <div id="preview-main-container" class="col-6">
-
+    <div id="preview-main-container" class="col-6" >
+                <body>
+          <p>Click <a href="javascript:makeDocument()">here</a> to see preview</p>
+          <iframe id="theFrame" src="about:blank" width="100%" height="100%" />
+        </body>
     </div>
     <div id="edit-element-container">
       <div id="edit-element-close" onclick="close_me('edit-element-container')">

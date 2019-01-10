@@ -26,6 +26,7 @@ function toolbox(option){
     }
 }
 
+
 function parse_string(str){
     var str2 = "";
     for(var i = 0; i<str.length;i++){
@@ -62,10 +63,11 @@ function work_site(option){
             var str = "<pre><code class=\"html\">" + parse_string(getPageCode()) + "</code></pre>";
             elem.innerHTML =str;
             hljs.highlightBlock(elem);
-
             break;
     }
+
 }
+
 
 function close_me(me) {
     document.getElementById(me).style.display = "none";
