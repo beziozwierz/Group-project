@@ -1,24 +1,3 @@
-function parse_string(str){
-    var str2 = "";
-    for(var i = 0; i<str.length;i++){
-                if(str.charAt(i) == '\n'){
-                    str2 += "<br />";
-                }else if(str.charAt(i) == '\t')
-                {
-                    str2 += "&emsp;";
-                }else if(str.charAt(i) == '<'){
-                    str2 += "&lt;"
-                }else if(str.charAt(i) == '>'){
-                    str2 += "&gt;"
-                }
-                else{
-                str2 += str.charAt(i);
-            }
-            }
-            return str2;
-
-
-}
 function htmlToElements(html) {
     var template = document.createElement('template');
     template.innerHTML = html;
