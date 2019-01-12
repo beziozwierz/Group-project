@@ -3,13 +3,21 @@
     top: 50%;
     left: 50%;
     width: 320px;
-    height: 400px;
-    margin-top: -200px;
+    height: 500px;
+    margin-top: -250px;
     margin-left: -160px;
     z-index: 30;
     background-color: #e26c37;
     border: solid 3px #2b26cd;
     display: none;
+}
+
+#edit-element-drop-container{
+    margin: 10% 5% 5% 5%;
+    width: 90%;
+    height: 340px;
+    background: #FFFFFF;
+    overflow-y: scroll;
 }
 
 #edit-element-close{
@@ -38,15 +46,31 @@
     margin-left: -100px;
 }
 
-#creator{
-  box-sizing: border-box;
-  width: 100%; height: 100%;
-  /*border: 5px solid  #000066;*/
+.edit-element-css{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 3px 10px;
+    float: left;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #38a833;
+    border: solid 3px #1e7920;
 }
-#styler{
-  height: 200px;
-  width: 500px;
-  border: 3px solid black;
-  margin-left: 30px;
-  float:left;
+
+#edit-element-create{
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    line-height: 32px;
+    background-color: #a82410;
+    border-radius: 5px;
+    border: solid 3px #79170a;
+}
+
+.edit-element-input{
+    width: 100px;
+    border: none;
+    background: transparent;
+    border-bottom: solid 1px #000000;
 }

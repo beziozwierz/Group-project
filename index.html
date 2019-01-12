@@ -20,6 +20,22 @@
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body onload="draw()">
+    <div id="edit-element-container">
+        <div id="edit-element-close" onclick="close_me('edit-element-container')">
+            ×
+        </div>
+        <div id="edit-element-title-container">
+
+        </div>
+        <div class="edit-element-element-title"></div>
+        <input id="edit-element-name-container" type="text" name="edit-name">
+        <div id="edit-element-drop-container" ondrop="cssDrop(event)" ondragover="allowDrop2(event)" ondragleave="leave2(event)">
+
+        </div>
+        <div id="edit-element-create" draggable="true" ondragstart="drag2(event)">
+            CREATE
+        </div>
+    </div>
     <div id="header-main-container" class="col-12">
 
     </div>
@@ -89,24 +105,24 @@
         <div id="toolbar-container-css" class="toolbar-container">
             <!-- TU UMIEŚ ELEMENTY CSS -->
             <div class="toolbar-element-container">
-                <div class="toolbar-element-css big-toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-css big-toolbar-element" draggable="true" onclick="toolbar_element(this)">
                     ID
                 </div>
-                <div class="toolbar-element-css big-toolbar-element" onclick="toolbar_element(this)">
+                <div class="toolbar-element-css big-toolbar-element" draggable="true" onclick="toolbar_element(this)">
                     Class
                 </div>
             </div>
             <div class="toolbar-element-container">
-                <div class="toolbar-element-css toolbar-element">
+                <div class="toolbar-element-css toolbar-element"  draggable="true" ondragstart="drag2(event)">
                     position
                 </div>
-                <div class="toolbar-element-css toolbar-element">
+                <div class="toolbar-element-css toolbar-element"  draggable="true" ondragstart="drag2(event)">
                     margin
                 </div>
-                <div class="toolbar-element-css toolbar-element">
+                <div class="toolbar-element-css toolbar-element"  draggable="true" ondragstart="drag2(event)">
                     size
                 </div>
-                <div class="toolbar-element-css toolbar-element">
+                <div class="toolbar-element-css toolbar-element"  draggable="true" ondragstart="drag2(event)">
                     padding
                 </div>
             </div>
@@ -146,16 +162,6 @@
           <iframe id="theFrame" src="about:blank" width="100%" height="100%" />
         </body>
 
-    </div>
-    <div id="edit-element-container">
-        <div id="edit-element-close" onclick="close_me('edit-element-container')">
-            ×
-        </div>
-        <div id="edit-element-title-container">
-
-        </div>
-        <div class="edit-element-element-title"></div>
-        <input id="edit-element-name-container" type="text" name="edit-name">
     </div>
 </body>
 </html>
