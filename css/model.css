@@ -1,0 +1,55 @@
+
+#model{
+  width: 100%;
+  height: 680px;
+  margin-top: 40px;
+}
+
+
+.model-div {
+    background-color: #e26c37;
+    border: solid 3px #cd440e;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.model-options-bar{
+  pointer-events: none;
+
+  position: relative;
+  border-bottom: 1px dotted black;
+  width:auto;
+  cursor: pointer;
+}
+.
+.model-element-title{
+  pointer-events: none;
+
+  float: left;
+  width: 40%
+}
+.model-options-bar-btn{
+  pointer-events: none;
+
+
+  width: 20px;
+  height: 20px;
+  text-align: center;
+    margin-left: 2px;
+  float: right;
+}
+.model-options-bar-btn:hover {
+  color: blue;
+  background-color: white;
+}
+#return-to-model{
+  border: 2px solid black;
+  padding: 5px;
+  width: 30%;
+}
+#return-to-model:hover{
+  color: blue;
+  background-color: white;
+
+}
