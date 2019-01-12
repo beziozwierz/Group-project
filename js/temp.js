@@ -79,6 +79,30 @@ function removeFromTree(event,id){
   draw();
 }
 
+function editText(event,id){
+  event.stopPropagation();
+
+  var div = model;
+  var index;
+  var path = translateName(id);
+  for(var i = 0 ; i < path.length ; i++){
+    div = div.inner[path[i]];
+    index = path[i];
+  }
+
+  code = '<input type="text" name="content" value="';
+  code += div.text;
+  code += '">';
+  code += '<div onclick="">SAVE</div>';
+
+  var editor = document.getElementById("edit-text-container");
+  editor.style.display = 'block';
+  editor.innerHTML = code;
+}
+function saveText(){
+
+}
+
 
 
 function getPageCode(){

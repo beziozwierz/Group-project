@@ -1,11 +1,17 @@
 class Div {
-  constructor(type, width, height, parent) {
+  constructor(name, width, height, parent) {
     this.inner = [];
-    this.type = type;
+    this.name = name;
     this.parent = parent;
     this.height = height;
     this.width = width;
     this.float = null;
+    if(name==='H1' || name==='H2' || name==='H3' || name==='TEXT' || name==='LABEL'){
+      this.type = 'text';
+      this.text = "";
+    }else{
+      this.type = 'container';
+    }
   }
 }
 

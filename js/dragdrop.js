@@ -27,26 +27,26 @@ function allowDrop(ev) {
         //highlighting
         var rect = ev.target.getBoundingClientRect();
         var condition = (ev.clientY - rect.top) / (rect.bottom - rect.top);
-        if (condition < 0.2) { //over top of div
-            $(ev.target).css({
-                'borderTop': "20px double black",
-                'borderBottom': "1px solid black",
-                'backgroundImage': ""
-            });
-        } else if (condition < 0.8) { //over middle of div
-            $(ev.target).css({
-                'borderTop': "1px solid black",
-                'borderBottom': "1px solid black",
-                'backgroundImage': "radial-gradient(black, lightgrey, lightgrey)"
-            });
-        } else {  //over bottom of the div
-            $(ev.target).css({
-                'borderBottom': "20px double black",
-                'borderTop': "1px solid black",
-                'backgroundImage': ""
-            });
+        if(condition<0.2){ //over top of div
+          $( ev.target ).css({
+            'borderTop': "20px double green",
+            'borderBottom': "1px solid black",
+            'backgroundImage': ""
+          });
+        }else if(condition<0.8){ //over middle of div
+          $( ev.target ).css({
+            'borderTop': "1px solid black",
+            'borderBottom': "1px solid black",
+            'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
+          });
+        }else{  //over bottom of the div
+          $( ev.target ).css({
+            'borderBottom': "20px double green",
+            'borderTop': "1px solid black",
+            'backgroundImage': ""
+          });
         }
-}
+  }
 
 function leave(event) { //reset div style (no highlight)
   $( event.target ).css({

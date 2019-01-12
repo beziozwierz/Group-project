@@ -74,3 +74,19 @@
     background: transparent;
     border-bottom: solid 1px #000000;
 }
+
+
+
+#edit-text-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -160px;
+    z-index: 30;
+    background-color: #e26c37;
+    border: solid 3px #2b26cd;
+    display: none;
+}
