@@ -15,6 +15,8 @@ class Div {
   }
 }
 
+
+
 var global_name = "HTML";
 
 var dragged = new Div(global_name, '100','50px',null);

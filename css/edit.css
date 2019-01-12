@@ -20,7 +20,7 @@
     overflow-y: scroll;
 }
 
-#edit-element-close{
+.edit-element-close{
     cursor: pointer;
 }
 
@@ -30,7 +30,7 @@
     margin: 10px 0;
 }
 
-#edit-element-close{
+.edit-element-close{
     float: right;
     position: relative;
     top: 2px;
@@ -81,12 +81,27 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 320px;
-    height: 500px;
+    width: 400px;
+    height: 200px;
     margin-top: -250px;
     margin-left: -160px;
     z-index: 30;
     background-color: #e26c37;
     border: solid 3px #2b26cd;
     display: none;
+}
+
+#edit-text-btn{
+  border: 2px solid black;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+  margin: auto;
+}
+
+#edit-text-btn:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
 }
