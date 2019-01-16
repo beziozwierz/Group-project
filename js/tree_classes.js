@@ -12,8 +12,8 @@ class CSS{
     add(element){
         this.elements.push(element);
     }
-    get(){
-        alert(this.elements[1]);
+    get(number){
+        return this.elements[number];
     }
 }
 
@@ -36,7 +36,6 @@ class Div {
     }
   }
   addCSS(object, type){
-      alert("Wchodze");
       if(type === "id"){
           this.id.push(object);
       }
@@ -46,7 +45,6 @@ class Div {
       else{
           this.style.push(object);
       }
-      alert("Wychodze");
   }
 
   toJSON() {

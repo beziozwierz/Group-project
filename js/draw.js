@@ -52,7 +52,7 @@ function getInnercode(div, depth, id){
            ' style="'+
            ' width: ' + div.inner[i].width+'%;';
        if(div.inner[i].height !== 'DEFAULT')
-           code += ' height: ' + div.inner[i].height+';';
+           code += ' min-height: ' + div.inner[i].height+';';
        if( div.inner[i].float != null){
          clear = true;
          code += ' float: ' + div.inner[i].float +'">\n';
@@ -66,6 +66,16 @@ function getInnercode(div, depth, id){
        }
        code+=getEditionPanelCode(div.inner[i].name, div.inner[i].type);
        code+=getInnercode(div.inner[i],depth+1,id+'_'+i);
+
+       for(var k = 0; k < div.inner[i].id.length; k++) {
+           code += '<div class="model-css-container">';
+           code += '<div class="model-css-header">' + div.inner[i].id[k].get_name() + '</div>';;
+           for(var l = 0; l < div.inner[i].id[k].elements.length; l++) {
+               code +=
+                   '<div class="model-css-element">' + div.inner[i].id[k].get(k) + '</div>';
+           }
+           code += '</div>';
+       }
 
        for(var j=0;j<depth;j++){ code+="\t"; }
        code+='</div>\n';
