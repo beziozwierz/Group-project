@@ -49,6 +49,7 @@ function allowDrop(ev) {
           });
         }
   }
+}
 
 function leave(event) { //reset div style (no highlight)
   $( event.target ).css({
