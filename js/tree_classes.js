@@ -1,6 +1,28 @@
+class CSS{
+    constructor(){
+        this.name = "Temp CSS";
+        this.elements = [];
+    }
+    set_name(name){
+        this.name = name;
+    }
+    get_name(){
+        return this.name;
+    }
+    add(element){
+        this.elements.push(element);
+    }
+    get(){
+        alert(this.elements[1]);
+    }
+}
+
 class Div {
   constructor(name, width, height, parent) {
     this.inner = [];
+    this.id = [];
+    this.class = [];
+    this.style = [];
     this.name = name;
     this.parent = parent;
     this.height = height;
@@ -13,9 +35,23 @@ class Div {
       this.type = 'container';
     }
   }
+  addCSS(object, type){
+      alert("Wchodze");
+      if(type === "id"){
+          this.id.push(object);
+      }
+      else if(type === "class"){
+          this.class.push(object);
+      }
+      else{
+          this.style.push(object);
+      }
+      alert("Wychodze");
+  }
 }
 
 var global_name = "HTML";
+var global_type = "HTML";
 
 var dragged = new Div(global_name, '100','50px',null);
 var pathToEdited = null;

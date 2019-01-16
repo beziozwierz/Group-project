@@ -6,10 +6,12 @@ function translateName(id){
 function drag(ev, type) {
   ev.dataTransfer.setData("text", ev.target.id);
   global_name = type;
+  global_type = "HTML";
 }
 
 function drag2(ev) {
     ev.dataTransfer.setData("text", ev.target.innerText);
+    global_type = "CSS";
 }
 
 function allowDrop2(ev){
@@ -86,33 +88,47 @@ function drop(ev) {
     var rect = ev.target.getBoundingClientRect();
     var condition = (ev.clientY - rect.top) / (rect.bottom - rect.top); //position relative to parent
 
-    if (div.type !== "MainModel") {
-        if (condition < 0.2) { //top of div drop
-            div.parent.inner.splice(index, 0, new Div(global_name, 80 / (div.parent.inner.length + 1), dragged.height, div.parent));
-            div.parent.height = 'DEFAULT';
-            for (var i = 0; i < div.parent.inner.length; i++) {
-                div.parent.inner[i].width = 90;
+    if(global_type === "HTML") {
+        if (div.type !== "MainModel") {
+            if (condition < 0.2) { //top of div drop
+                div.parent.inner.splice(index, 0, new Div(global_name, 80 / (div.parent.inner.length + 1), dragged.height, div.parent));
+                div.parent.height = 'DEFAULT';
+                for (var i = 0; i < div.parent.inner.length; i++) {
+                    div.parent.inner[i].width = 90;
+                }
+            } else if (condition < 0.8) { //middle of div drop
+                div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
+                div.height = 'DEFAULT';
+                for (var i = 0; i < div.inner.length; i++) {
+                    div.inner[i].width = 90;
+                }
+            } else {
+                div.parent.inner.splice(index + 1, 0, new Div(global_name, 80 / div.parent.inner.length, dragged.height, div.parent));
+                div.parent.height = 'DEFAULT';
+                for (var i = 0; i < div.parent.inner.length; i++) {
+                    div.parent.inner[i].width = 90;
+                }
             }
-        } else if (condition < 0.8) { //middle of div drop
+        }
+        else {
             div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
             div.height = 'DEFAULT';
             for (var i = 0; i < div.inner.length; i++) {
                 div.inner[i].width = 90;
             }
-        } else {
-            div.parent.inner.splice(index + 1, 0, new Div(global_name, 80 / div.parent.inner.length, dragged.height, div.parent));
-            div.parent.height = 'DEFAULT';
-            for (var i = 0; i < div.parent.inner.length; i++) {
-                div.parent.inner[i].width = 90;
-            }
         }
     }
-    else {
-        div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
-        div.height = 'DEFAULT';
-        for (var i = 0; i < div.inner.length; i++) {
-            div.inner[i].width = 90;
+    else if(global_type === "CSS"){
+        var new_css = new CSS();
+        new_css.set_name(document.getElementById("edit-element-name-container").value);
+        var tmp = document.getElementsByClassName("edit-element-css");
+        var tmp2 = document.getElementsByClassName("edit-element-input");
+        for (var i = 0; i < tmp.length; i++){
+            alert(tmp[i].innerText + tmp2[i].value + ";");
+            new_css.add(tmp[i].innerText + tmp2[i].value + ";");
         }
+
+        div.parent.inner[0].addCSS(new_css, "id");
     }
   draw();
 }
