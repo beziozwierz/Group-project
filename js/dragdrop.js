@@ -48,7 +48,6 @@ function allowDrop(ev) {
             'backgroundImage': ""
           });
         }
-  }
 }
 
 function leave(event) { //reset div style (no highlight)
