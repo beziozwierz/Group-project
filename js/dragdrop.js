@@ -33,7 +33,7 @@ function allowDrop(ev) {
           $( ev.target ).css({
             'borderTop': "20px double green",
             'borderBottom': "1px solid black",
-            'backgroundImage': ""
+            'backgroundImage' : ""
           });
         }else if(condition<0.8){ //over middle of div
           $( ev.target ).css({
@@ -49,7 +49,6 @@ function allowDrop(ev) {
           });
         }
   }
-}
 
 function leave(event) { //reset div style (no highlight)
   $( event.target ).css({
@@ -80,7 +79,9 @@ function drop(ev) {
     var div = model;
     var index;
     var path = translateName(ev.target.id);
+    var div2 = div;
     for (var i = 0; i < path.length; i++) {
+        div2 = div;
         div = div.inner[path[i]];
         index = path[i];
     }
@@ -92,10 +93,10 @@ function drop(ev) {
     if(global_type === "HTML") {
         if (div.type !== "MainModel") {
             if (condition < 0.2) { //top of div drop
-                div.parent.inner.splice(index, 0, new Div(global_name, 80 / (div.parent.inner.length + 1), dragged.height, div.parent));
-                div.parent.height = 'DEFAULT';
-                for (var i = 0; i < div.parent.inner.length; i++) {
-                    div.parent.inner[i].width = 90;
+                div2.inner.splice(index, 0, new Div(global_name, 80 / (div2.inner.length + 1), dragged.height, div2));
+                div2.height = 'DEFAULT';
+                for (var i = 0; i < div2.inner.length; i++) {
+                    div2.inner[i].width = 90;
                 }
             } else if (condition < 0.8) { //middle of div drop
                 div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
@@ -104,10 +105,10 @@ function drop(ev) {
                     div.inner[i].width = 90;
                 }
             } else {
-                div.parent.inner.splice(index + 1, 0, new Div(global_name, 80 / div.parent.inner.length, dragged.height, div.parent));
-                div.parent.height = 'DEFAULT';
-                for (var i = 0; i < div.parent.inner.length; i++) {
-                    div.parent.inner[i].width = 90;
+                div2.inner.splice(index + 1, 0, new Div(global_name, 80 / div2.inner.length, dragged.height, div2));
+                div2.height = 'DEFAULT';
+                for (var i = 0; i < div2.inner.length; i++) {
+                    div2.inner[i].width = 90;
                 }
             }
         }
@@ -129,7 +130,7 @@ function drop(ev) {
             new_css.add(tmp[i].innerText + tmp2[i].value + ";");
         }
 
-        div.parent.inner[0].addCSS(new_css, "id");
+        div2.inner[0].addCSS(new_css, "id");
     }
   draw();
 }
