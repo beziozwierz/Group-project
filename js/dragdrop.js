@@ -124,7 +124,6 @@ function drop(ev) {
         var tmp = document.getElementsByClassName("edit-element-css");
         var tmp2 = document.getElementsByClassName("edit-element-input");
         for (var i = 0; i < tmp.length; i++){
-            alert(tmp[i].innerText + tmp2[i].value + ";");
             new_css.add(tmp[i].innerText + tmp2[i].value + ";");
         }
 

@@ -1,7 +1,7 @@
 #edit-element-container{
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 250px;
+    right: 0;
     width: 320px;
     height: 500px;
     margin-top: -250px;
@@ -20,9 +20,6 @@
     overflow-y: scroll;
 }
 
-.edit-element-close{
-    cursor: pointer;
-}
 
 #edit-element-title-container{
     text-align: center;
@@ -30,13 +27,14 @@
     margin: 10px 0;
 }
 
-.edit-element-close{
+#edit-element-close{
     float: right;
     position: relative;
     top: 2px;
     right: 14px;
     line-height: 32px;
     font-size: 32px;
+    cursor: pointer;
 }
 
 #edit-element-name-container{

@@ -53,3 +53,24 @@
   background-color: white;
 
 }
+
+.model-css-container{
+    width: 40%;
+    display: inline-block;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #38a833;
+  border: solid 3px #1e7920;
+}
+
+.model-css-header{
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.model-css-element{
+  font-size: 16px;
+  cursor: pointer;
+}
