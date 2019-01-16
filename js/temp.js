@@ -71,17 +71,20 @@ function removeFromTree(event,id){
   var div = model;
   var index;
   var path = translateName(id);
+  var div2 = div;
   for(var i = 0 ; i < path.length ; i++){
+    div2 = div;
     div = div.inner[path[i]];
     index = path[i];
   }
-  div.parent.inner.splice(index,1);
+  div2.inner.splice(index,1);
   draw();
 }
 
 
 
 function getPageCode(){
+  console.log (JSON.stringify(model));    
   code = getInnerPageCode(model,0);
   //console.log(code);
   return code;

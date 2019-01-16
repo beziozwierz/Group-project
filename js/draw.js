@@ -6,7 +6,7 @@ function draw() {
    code += getInnercode(viewpoint_root,0,viewpoint_name);
    var elem = document.getElementById("model");
    elem.innerHTML =  code;
-   console.log(code)
+   //console.log(code)
 }
 
 
