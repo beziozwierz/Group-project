@@ -64,7 +64,7 @@ function getInnercode(div, depth, id){
              code += '">\n';
            }
        }
-       code+=getEditionPanelCode(div.inner[i].type);
+       code+=getEditionPanelCode(div.inner[i].name, div.inner[i].type);
        code+=getInnercode(div.inner[i],depth+1,id+'_'+i);
 
        for(var j=0;j<depth;j++){ code+="\t"; }
@@ -73,14 +73,18 @@ function getInnercode(div, depth, id){
        return code;
 }
 
-function getEditionPanelCode(type){
+
+function getEditionPanelCode(name,type){
       code='<div class="model-options-bar">\n';
 
-        code += '<div class="model-element-title">' + type + '</div>'
-        if(type!=="MainModel"){
+        code += '<div class="model-element-title">' + name + '</div>'
+        if(name!=="MainModel"){
           code+='<img src="icons/zoom.png" class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)"/>';
           code+='<img src="icons/edit.png" class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)"/>';
           code+='<img src="icons/delete.png" class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)"/>';
+          if(type==='text'){
+            code+='<img src="icons/text.png" class="model-options-bar-btn" onclick="editText(event,this.parentNode.parentNode.id)"/>';
+          }
         }
       code+='</div>\n'
       return code;

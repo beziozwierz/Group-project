@@ -83,6 +83,40 @@ function removeFromTree(event,id){
 
 
 
+var currently_edited = null; //temporarly added
+function editText(event,id){
+  event.stopPropagation();
+
+  var div = model;
+  var index;
+  var path = translateName(id);
+  for(var i = 0 ; i < path.length ; i++){
+    div = div.inner[path[i]];
+    index = path[i];
+  }
+  currently_edited = div;
+
+  code = '<div class="edit-element-close" ';
+  code += 'onclick="close_me('+"'edit-text-container')"+'">×</div>';
+  code += '<h1>Zmień tekst:</h1>'
+  code += '<input type="text" name="content" value="';
+  code += div.text;
+  code += '"><br/><br/>';
+  code += '<div id="edit-text-btn" onclick="saveText()">SAVE</div>';
+
+  var editor = document.getElementById("edit-text-container");
+  editor.style.display = 'block';
+  editor.innerHTML = code;
+}
+function saveText(div){
+  text = document.getElementsByName("content")[0].value;
+  currently_edited.text = text;
+  close_me('edit-text-container');
+  console.log(text);
+}
+
+
+
 function getPageCode(){
   console.log (JSON.stringify(model));    
   code = getInnerPageCode(model,0);
@@ -92,19 +126,34 @@ function getPageCode(){
 function getInnerPageCode(div, depth){
   var code = "";
   for(var i = 0; i < div.inner.length ; i++){
+
+    //wcięcia
     for(var j=0;j<depth;j++){ code+="\t"; }
 
+    if(div.inner[i].name == "TEXT"){
+      code += div.inner[i].text;
+      code += '\n';
+      continue;
+    }
 
-    code += '<'+div.inner[i].type;
+    code += '<'+div.inner[i].name; //name: main, nav itp
+    //dodanie id (jeżeli istnieje)
     if(div.inner[i].id == null){
       code+='>\n';
     }else{
       code+=' id="' + div.inner[i].id +'">\n';
     }
+    //dodanie tekstu dla tekstowych zmiennych (h1,label itp)
+    if(div.inner[i].type==='text'){
+      //wcięcia
+      for(var j=0;j<=depth;j++){ code+="\t"; }
+      code+=div.inner[i].text;
+      code+='\n';
+    }
     code+=getInnerPageCode(div.inner[i],depth+1);
 
     for(var j=0;j<depth;j++){ code+="\t"; }
-    code+='</'+div.inner[i].type+'>\n';
+    code+='</'+div.inner[i].name+'>\n';
   }
   return code;
 }

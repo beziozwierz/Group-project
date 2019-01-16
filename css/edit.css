@@ -1,0 +1,107 @@
+#edit-element-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: -160px;
+    z-index: 30;
+    background-color: #e26c37;
+    border: solid 3px #2b26cd;
+    display: none;
+}
+
+#edit-element-drop-container{
+    margin: 10% 5% 5% 5%;
+    width: 90%;
+    height: 340px;
+    background: #FFFFFF;
+    overflow-y: scroll;
+}
+
+.edit-element-close{
+    cursor: pointer;
+}
+
+#edit-element-title-container{
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.edit-element-close{
+    float: right;
+    position: relative;
+    top: 2px;
+    right: 14px;
+    line-height: 32px;
+    font-size: 32px;
+}
+
+#edit-element-name-container{
+    position: relative;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+}
+
+.edit-element-css{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 3px 10px;
+    float: left;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #38a833;
+    border: solid 3px #1e7920;
+}
+
+#edit-element-create{
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    line-height: 32px;
+    background-color: #a82410;
+    border-radius: 5px;
+    border: solid 3px #79170a;
+}
+
+.edit-element-input{
+    width: 100px;
+    border: none;
+    background: transparent;
+    border-bottom: solid 1px #000000;
+}
+
+
+
+#edit-text-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 200px;
+    margin-top: -250px;
+    margin-left: -160px;
+    z-index: 30;
+    background-color: #e26c37;
+    border: solid 3px #2b26cd;
+    display: none;
+}
+
+#edit-text-btn{
+  border: 2px solid black;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+  margin: auto;
+}
+
+#edit-text-btn:hover{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
