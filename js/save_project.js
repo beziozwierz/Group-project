@@ -12,16 +12,20 @@ function parseDiv (Div) {
 
 	return {
         inner: inner,
-		type: Div.type,
+        id: Div.id,
+        class: Div.class,
+        style: Div.style,
+        name: Div.name,
 		parent: [],
 		height: Div.height,	
 		width: Div.width,
 		float: Div.float,
+		type: Div.type
     }
 }
 
 function restoreDiv (json) {
-	var div = new Div(json.type, json.width, json.height, json.parent);
+	var div = new Div(json.name, json.width, json.height, json.parent);
 	
 	if (json.inner.length > 0) {
 		for(var i = 0; i < json.inner.length ; i++){
@@ -33,13 +37,15 @@ function restoreDiv (json) {
 }
 
 function fn_save_html() {
+	// console.log(model);
 	var html = JSON.stringify(model);
+	// console.log(html);
 	$.ajax({
 		url: "save_html.php",
 		method : "post",
 		data: { html : html },
 		success: function(result){
-			console.log('ok');
+			console.log(result);
 	  	}
 	});
 }
@@ -51,6 +57,7 @@ function fn_load_html() {
 		url: "load_html.php",
 		method : "get",
 		success: function(result) {
+			// console.log(result);
 			html = JSON.parse(result);
 			console.log(JSON.parse(html));	
 			

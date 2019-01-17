@@ -15,4 +15,5 @@ function makeDocument() {
   var srcNode = doc.documentElement;
   var newNode = destDocument.importNode(srcNode, true); 
   destDocument.replaceChild(newNode, destDocument.documentElement);
+  console.log(model);
 }
