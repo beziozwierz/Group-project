@@ -72,7 +72,7 @@ function getInnercode(div, depth, id){
            code += '<div class="model-css-header">' + div.inner[i].id[k].get_name() + '</div>';;
            for(var l = 0; l < div.inner[i].id[k].elements.length; l++) {
                code +=
-                   '<div class="model-css-element">' + div.inner[i].id[k].get(k) + '</div>';
+                   '<div class="model-css-element">' + div.inner[i].id[k].get(l) + '</div>';
            }
            code += '</div>';
        }
