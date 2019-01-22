@@ -7,9 +7,9 @@
 
 
 .model-div {
-    background-color: #e26c37;
-    border: solid 3px #cd440e;
-    border-radius: 5px;
+    background-color: #ff986a;
+    border: solid 2px #ff672b;
+    border-radius: 2px;
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -57,12 +57,12 @@
 .model-css-container{
     width: 40%;
     display: inline-block;
-  padding: 3px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #38a833;
-  border: solid 3px #1e7920;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #b3ffaf;
+    border: solid 2px #599d5a;
 }
 
 .model-css-header{
