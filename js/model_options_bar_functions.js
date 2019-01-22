@@ -10,8 +10,8 @@ function editStyle(event,element){
 }
 
 /***
-Usuwa dany div z modelu i z drzewa 
-TODO: (może) przenosi do kosza? 
+Usuwa dany div z modelu i z drzewa
+TODO: (może) przenosi do kosza?
 ***/
 function removeFromTree(event,id){
   event.stopPropagation();
@@ -97,4 +97,29 @@ function saveText(div){
   console.log(text);
 }
 
+/***
+Dodaje kliknięte poddrzewo do templatek
+***/
+function create_template(event,id){
+  event.stopPropagation();
 
+  var div = model;
+  var path = translateName(id);
+
+  for(var i = 0 ; i < path.length ; i++){
+    div = div.inner[path[i]];
+  }
+  copy = JSON.parse(JSON.stringify(div));
+  //modal, podanie id
+  var txt;
+  var name = prompt("Podaj nazwę templatki:", "");
+  if (name == null || name == "" || templates[name]!=null) {
+    window.alert("Błąd, podaj inna nazwe");
+  } else {
+   templates[name] = copy;
+   var v = document.getElementById("toolbar-container-template");
+   v.innerHTML+= '<div id="'+name+'" draggable="true" ondragstart="dragTemplate(event)"'+
+     ' style="width: 40px; height: 40px; border: 1px solid black;">'+name+'</div>';
+  }
+
+}

@@ -51,7 +51,7 @@ function allowDrop(ev) {
       'borderBottom': "1px solid black",
       'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
     });
-  }else{ //Nad elementem znajduje się element HTML
+  }else{ //Nad elementem znajduje się element HTML lub TREE(template)
 
     //Znajduje względne położenie kursora w divie modelu
     var rect = ev.target.getBoundingClientRect();
@@ -116,9 +116,11 @@ function drop(ev) {
   ev.stopPropagation();
 
   var div = model;
+  var parent;
   var index;
   var path = translateName(ev.target.id);
   for (var i = 0; i < path.length; i++) {
+    parent = div;
     div = div.inner[path[i]];
     index = path[i];
   }
@@ -130,22 +132,22 @@ function drop(ev) {
   if(global_type === "HTML") {
 //    if (div.type !== "MainModel") {
       if (condition < 0.2 && ev.target.id !== viewpoint_name) { //top of div drop
-        div.parent.inner.splice(index, 0, new Div(global_name, 80 / (div.parent.inner.length + 1), dragged.height, div.parent));
-        div.parent.height = 'DEFAULT';
-        for (var i = 0; i < div.parent.inner.length; i++) {
-          div.parent.inner[i].width = 90;
+        parent.inner.splice(index, 0, new Div(global_name, 80 / (parent.inner.length + 1), dragged.height));//, div.parent));
+        parent.height = 'DEFAULT';
+        for (var i = 0; i < parent.inner.length; i++) {
+          parent.inner[i].width = 90;
         }
       } else if (condition < 0.8) { //middle of div drop
-          div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height, div);
+          div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height);//, div);
           div.height = 'DEFAULT';
           for (var i = 0; i < div.inner.length; i++) {
             div.inner[i].width = 90;
           }
       } else if(ev.target.id !== viewpoint_name){
-          div.parent.inner.splice(index + 1, 0, new Div(global_name, 80 / div.parent.inner.length, dragged.height, div.parent));
-          div.parent.height = 'DEFAULT';
-          for (var i = 0; i < div.parent.inner.length; i++) {
-            div.parent.inner[i].width = 90;
+          parent.inner.splice(index + 1, 0, new Div(global_name, 80 / parent.inner.length, dragged.height));//, div.parent));
+          parent.height = 'DEFAULT';
+          for (var i = 0; i < parent.inner.length; i++) {
+            parent.inner[i].width = 90;
           }
       }
     } else if(global_type === "CSS"){
@@ -156,9 +158,36 @@ function drop(ev) {
         for (var i = 0; i < tmp.length; i++){
             new_css.add(tmp[i].innerText + tmp2[i].value + ";");
         }
-        div.parent.inner[0].addCSS(new_css, "id");
+        parent.inner[0].addCSS(new_css, "id");
+    } else if(global_type === "TREE"){
+        //tworzenie kopii poddrzewa (templatki)
+        template_name = ev.dataTransfer.getData("text");
+        copy = JSON.parse(JSON.stringify(templates[template_name]));
+
+        if(copy === templates[template_name]){
+          console.log("ERR1 (dragrop)");
+        }
+        if(copy.inner[0] === templates[template_name].inner[0]){
+          console.log("SHALLOW NIE DEEP");
+        }
+
+        if (condition < 0.2 && ev.target.id !== viewpoint_name)
+          parent.inner.splice(index, 0, copy);
+        else if(condition < 0.8)
+          div.inner[div.inner.length] = copy;
+        else if(ev.target.id !== viewpoint_name)
+          parent.inner.splice(index + 1, 0, copy);
+
+        //!!! WIĘCEJ NIŻ 1 POZIOM
+        /*for (var i = 0; i < div.inner.length; i++) {
+          div.inner[i].width = 90;
+        }*/
     }
   draw();
+}
+function dragTemplate(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+  global_type = "TREE";
 }
 
 

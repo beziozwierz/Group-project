@@ -10,7 +10,7 @@ function draw() {
   }
   //code+=getModelDivCode(viewpoint_root,viewpoint_name);
    code += getModelDivCode(viewpoint_root,viewpoint_name);
-   console.log(code);
+   //console.log(code);
    var elem = document.getElementById("model");
    elem.innerHTML =  code;
 }
@@ -46,6 +46,7 @@ Depth określa ilość wcięć,
 id określa przedrostek nazwy, po której możliwe będzie odnalezienie diva w drzewie.
 ***/
 function getInnerCode(div, depth, id){
+  console.log(div.name);
   var code = "";
 
   //var clear = false;
@@ -102,6 +103,7 @@ function getEditionPanelCode(name,type){
           code+='<img src="icons/zoom.png" class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)"/>';
           code+='<img src="icons/edit.png" class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)"/>';
           code+='<img src="icons/delete.png" class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)"/>';
+          code+='<img src="icons/copy.png" class="model-options-bar-btn" onclick="create_template(event,this.parentNode.parentNode.id)"/>';
           if(type==='text'){
             code+='<img src="icons/text.png" class="model-options-bar-btn" onclick="editText(event,this.parentNode.parentNode.id)"/>';
           }

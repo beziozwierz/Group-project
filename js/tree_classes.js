@@ -18,13 +18,13 @@ class CSS{
 }
 
 class Div {
-  constructor(name, width, height, parent) {
+  constructor(name, width, height){//, parent) {
     this.inner = [];
     this.id = [];
     this.class = [];
     this.style = [];
     this.name = name;
-    this.parent = parent;
+    //this.parent = parent;
     this.height = height;
     this.width = width;
     this.float = null;
@@ -51,4 +51,3 @@ class Div {
         return parseDiv(this);
     }
 }
-
