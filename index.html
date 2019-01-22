@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="css/model.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="js/tree_classes.js"></script>
+    <script src="js/globals.js"></script>
+
     <script src="js/draw.js"></script>
+    <script src="js/model_options_bar_functions.js"></script>
+
+
     <script src="js/dragdrop.js"></script>
     <script src="js/temp.js"></script>  <!-- temporarly for div creation/edition*/ -->
+
+
     <script src="js/bookmarks.js"></script>
     <script src="js/toolbar.js"></script>
     <script src="js/preview.js"></script>
@@ -68,58 +76,58 @@
         <div id="toolbar-container-html" class="toolbar-container">
             <!-- TU UMIEŚ ELEMENTY HTML -->
             <div class="toolbar-element-container">
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())" >
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())" >
                     header
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     title
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     settings
                 </div>
             </div>
             <div class="toolbar-element-container">
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     section
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     header
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     navigation
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     article
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     footer
                 </div>
             </div>
             <div class="toolbar-element-container">
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     div
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     list
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     line
                 </div>
             </div>
             <div class="toolbar-element-container">
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     h1
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     h2
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     h3
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     label
                 </div>
-                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="drag(event, this.innerText.toUpperCase())">
+                <div class="toolbar-element-html toolbar-element" draggable="true" ondragstart="dragHtmlElement(event, this.innerText.toUpperCase())">
                     text
                 </div>
             </div>
