@@ -1,0 +1,15 @@
+    <script src="js/tree_classes.js"></script>
+    <script src="js/globals.js"></script>
+
+    <script src="js/draw.js"></script>
+    <script src="js/model_options_bar_functions.js"></script>
+
+
+    <script src="js/dragdrop.js"></script>
+    <script src="js/temp.js"></script>  <!-- temporarly for div creation/edition*/ -->
+
+
+    <script src="js/bookmarks.js"></script>
+    <script src="js/toolbar.js"></script>
+    <script src="js/preview.js"></script>
+    <script src="js/save_project.js"></script>
