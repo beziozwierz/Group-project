@@ -9,6 +9,21 @@ body{
     color: #e2e2e2
 }
 
+input{
+    color: #3a4043;
+    border: none;
+    background: none;
+}
+
+::placeholder{
+    color: #3a4043;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: dashed 2px #3a4043;
+}
+
 #toolbar-main-container{
     width: 20%;
     height: 800px;
@@ -91,6 +106,11 @@ body{
     background-color: #051b33;
 }
 
+.toolbar-element-extended-content{
+    display: none;
+    outline: solid 1px #e2e2e2;
+}
+
 #model-inspector-container{
     position: absolute;
     width: 100%;
@@ -134,4 +154,71 @@ body{
     margin: 0 10px 10px 10px;
     float: left;
     font-size: 14px;
+}
+
+.model-inspector-optional-header{
+    margin-right: 4px;
+    float: left;
+}
+
+.model-inspector-optional-text-container{
+    float: left;
+}
+
+.model-inspector-optional-element{
+
+}
+
+#model-inspector-css-container{
+    width: 100%;
+    padding-bottom: 5px;
+    float: left;
+    border-top: dashed 3px #3a4043;
+}
+
+#model-inspector-css-type{
+    width: 100%;
+    float: left;
+    line-height: 6px;
+    font-size: 11px;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+#model-inspector-css-title{
+    width: 300px;
+    background: none;
+    float: left;
+    line-height: 26px;
+    font-size: 26px;
+    margin: 0 5px 0 30px;
+}
+
+#model-inspector-css-title:focus{
+    margin-bottom: -2px;
+}
+
+#model-inspector-css-drop-area{
+    float: left;
+    width: 100%;
+    min-height: 21px;
+}
+
+.model-inspector-css-drop-element{
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.model-inspector-css-drop-element-edit{
+
+}
+
+#toolbar-css-categories-container{
+    width: 100%;
+    float: left;
+    margin-top: 3px;
+    display: none;
 }
