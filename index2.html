@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB-Blocks</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/toolbar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body onload="draw()">
+    <div id="toolbar-main-container">
+        <div id="toolbar-button-container">
+            <div class="toolbar-button" onclick="category_select(this)">
+                HTML
+            </div>
+            <div class="toolbar-button" onclick="category_select(this)">
+                CSS
+            </div>
+            <div class="toolbar-button" onclick="category_select(this)">
+                TEMPLATES
+            </div>
+        </div>
+        <div id="toolbar-html-categories-container">
+            <div class="toolbar-category-button">
+                <div class="toolbar-category-title" onclick="element_select(this)">
+                    Containers
+                </div>
+                <div class="toolbar-category-content" id="toolbar-HTML_Containers">
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Default container
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Text container
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Website container
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-category-button">
+                <div class="toolbar-category-title" onclick="element_select(this)">
+                    Flow control
+                </div>
+                <div class="toolbar-category-content" id="toolbar-HTML_FlowControl">
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Text header
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Table
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Table row
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Table cel
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Ordered list
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Unordered list
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        List element
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-category-button">
+                <div class="toolbar-category-title" onclick="element_select(this)">
+                    External sources
+                </div>
+                <div class="toolbar-category-content" id="toolbar-HTML_ExternalSources">
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Webpage link
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Graphics
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Audio
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Video
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-category-button">
+                <div class="toolbar-category-title" onclick="element_select(this)">
+                    Forms
+                </div>
+                <div class="toolbar-category-content" id="toolbar-HTML_Forms">
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Form
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Input
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Textarea
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Button
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Select
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Option
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-category-button">
+                <div class="toolbar-category-title" onclick="element_select(this)">
+                    Semantics
+                </div>
+                <div class="toolbar-category-content" id="toolbar-HTML_Semantics">
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Header
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Navigation
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Section
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Article
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Aside
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Footer
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-category-button">
+                <div class="toolbar-category-title" onclick="element_select(this)">
+                    Settings
+                </div>
+                <div class="toolbar-category-content" id="toolbar-HTML_Settings">
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Title
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Meta-data
+                    </div>
+                    <div class="toolbar-content-element"  onmouseover="element_hover(this)" onmouseleave="element_leaved()">
+                        Viewport
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="toolbar-css-categories-container">
+
+        </div>
+        <div id="toolbar-templates-categories-container">
+
+        </div>
+    </div>
+    <div id="toolbar-resize">
+
+    </div>
+    <div id="model-main-container">
+        <div id="model-inspector-container">
+            <div id="model-inspector-title">
+
+            </div>
+            <div id="model-inspector-tag">
+
+            </div>
+            <div id="model-inspector-description">
+
+            </div>
+            <div id="model-inspector-needed">
+
+            </div>
+            <div id="model-inspector-optional">
+
+            </div>
+        </div>
+    </div>
+    <div id="model-resize">
+
+    </div>
+    <div id="preview-main-container">
+
+    </div>
+</body>
+</html>

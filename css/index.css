@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'MuseoSans-500';
+    src: url('../fonts/MuseoSans-500.ttf') format('truetype');
+}
+
+body{
+    margin: 0;
+    font-family: MuseoSans-500, sans-serif;
+    color: #e2e2e2
+}
+
+#toolbar-main-container{
+    width: 20%;
+    height: 800px;
+    float: left;
+    background: #051B33;
+}
+
+#toolbar-resize{
+    width: 3px;
+    height: 800px;
+    float: left;
+    background: #e2e2e2;
+}
+
+#model-main-container{
+    position: relative;
+    width: 30%;
+    height: 800px;
+    float: left;
+    background: #051B33;
+}
+
+#model-resize{
+    width: 3px;
+    height: 800px;
+    float: left;
+    background: #e2e2e2;
+}
+
+#preview-main-container{
+    width: calc(50% - 6px);
+    height: 800px;
+    float: left;
+    background: #051B33;
+}
+
+#toolbar-button-container{
+    width: 100%;
+    float: left;
+}
+
+.toolbar-button{
+    float: left;
+    width: 33.3%;
+    text-align: center;
+    background-color: #10182B;
+    line-height: 30px;
+    font-size: 14px;
+    outline: solid 3px #e2e2e2;
+    cursor: pointer;
+}
+
+#toolbar-html-categories-container{
+    width: 100%;
+    float: left;
+    margin-top: 3px;
+    display: none;
+}
+
+.toolbar-category-button{
+    width: 100%;
+    float: left;
+    text-align: center;
+    line-height: 32px;
+    background-color: #10182B;
+    border-bottom: solid 1px #e2e2e2;
+    cursor: pointer;
+}
+
+.toolbar-category-title{
+
+}
+
+.toolbar-category-content{
+    border-top: solid 1px #e2e2e2;
+    display: none;
+}
+
+.toolbar-content-element{
+    background-color: #051b33;
+}
+
+#model-inspector-container{
+    position: absolute;
+    width: 100%;
+    float: left;
+    background-color: #e2e2e2;
+    color: #3a4043;
+    display: none;
+}
+
+#model-inspector-title{
+    float: left;
+    line-height: 32px;
+    font-size: 26px;
+    margin: 10px 5px 10px 10px;
+}
+
+#model-inspector-tag{
+    margin-top: 22px;
+    float: left;
+    line-height: 14px;
+    font-size: 14px;
+}
+
+#model-inspector-description{
+    width: 100%;
+    margin: 0 10px 10px 10px;
+    float: left;
+    line-height: 14px;
+    font-size: 12px;
+}
+
+#model-inspector-needed{
+    width: 100%;
+    margin: 0 10px 10px 10px;
+    float: left;
+    font-size: 14px;
+}
+
+#model-inspector-optional{
+    width: 100%;
+    margin: 0 10px 10px 10px;
+    float: left;
+    font-size: 14px;
+}

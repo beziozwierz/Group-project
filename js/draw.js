@@ -69,7 +69,7 @@ function getInnercode(div, depth, id){
 
        for(var k = 0; k < div.inner[i].id.length; k++) {
            code += '<div class="model-css-container">';
-           code += '<div class="model-css-header">' + div.inner[i].id[k].get_name() + '</div>';;
+           code += '<div class="model-css-header">' + div.inner[i].id[k].get_name() + '</div>';
            for(var l = 0; l < div.inner[i].id[k].elements.length; l++) {
                code +=
                    '<div class="model-css-element">' + div.inner[i].id[k].get(l) + '</div>';
