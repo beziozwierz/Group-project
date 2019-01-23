@@ -28,6 +28,9 @@ function nameToTag(text){
     case "Tiny header":
       name = "h6";
       break;
+    case "Normal text":
+      name="text";
+      break;
     case "Table":
       name = "table";
       break;

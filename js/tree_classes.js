@@ -32,7 +32,7 @@ class Div {
     this.height = height;
     this.width = width;
     this.float = null;
-    if(name==='H1' || name==='H2' || name==='H3' || name==='TEXT' || name==='LABEL'){
+    if(name==='h1' || name==='h2' || name==='h3' || name === 'h4' || name ==='h5' || name === 'h6' || name==='text' || name==='span'){
       this.type = 'text';
       this.text = "";
     }else{

@@ -100,14 +100,16 @@ function getEditionPanelCode(name,type){
 
   code += '<div class="model-element-title">' + name + '</div>'
   if(name!=="MainModel"){
-          code+='<img src="icons/zoom.png" class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)"/>';
-          code+='<img src="icons/edit.png" class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)"/>';
-          code+='<img src="icons/delete.png" class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)"/>';
-          code+='<img src="icons/copy.png" class="model-options-bar-btn" onclick="create_template(event,this.parentNode.parentNode.id)"/>';
-          if(type==='text'){
-            code+='<img src="icons/text.png" class="model-options-bar-btn" onclick="editText(event,this.parentNode.parentNode.id)"/>';
-          }
-        }
-      code+='</div>\n'
-      return code;
+      code+='<img src="icons/delete.png" class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)"/>';
+      if(name!=='text'){
+        code+='<img src="icons/zoom.png" class="model-options-bar-btn" onclick="zoom(event,this.parentNode.parentNode)"/>';
+        code+='<img src="icons/edit.png" class="model-options-bar-btn" onclick="editStyle(event,this.parentNode.parentNode)"/>';
+        code+='<img src="icons/copy.png" class="model-options-bar-btn" onclick="create_template(event,this.parentNode.parentNode.id)"/>';
+      }
+      if(type==='text'){
+          code+='<img src="icons/text.png" class="model-options-bar-btn" onclick="editText(event,this.parentNode.parentNode.id)"/>';
+      }
+  }
+  code+='</div>\n'
+  return code;
 }

@@ -68,11 +68,21 @@ function allowDrop(ev) {
         'backgroundImage': ""
       });
     }else if(condition<0.8){ //over middle of div
-      $( ev.target ).css({
-        'borderTop': "1px solid black",
-        'borderBottom': "1px solid black",
-        'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
-      });
+      //Nie można upuszczać wewnątrz zwykłego tekstu
+      var path = translateName(ev.target.id);
+      var div = model;
+      for (var i = 0; i < path.length; i++) {
+        div = div.inner[path[i]];
+      }
+      if(div.name === 'text'){
+          leave(ev);
+      }else{
+          $( ev.target ).css({
+            'borderTop': "1px solid black",
+            'borderBottom': "1px solid black",
+            'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
+          });
+      }
     }else if(ev.target.id !== viewpoint_name){  //over bottom of the div, not 1st element in view
       $( ev.target ).css({
         'borderBottom': "20px double green",
@@ -115,6 +125,7 @@ function drop(ev) {
     //console.log("NIE ODPALAĆ DROPA");
     return;
   }
+
   ev.preventDefault();
   ev.stopPropagation();
 
@@ -141,6 +152,9 @@ function drop(ev) {
           parent.inner[i].width = 90;
         }
       } else if (condition < 0.8) { //middle of div drop
+          if(div.name === 'text'){
+            return;
+          }
           div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height);//, div);
           div.height = 'DEFAULT';
           for (var i = 0; i < div.inner.length; i++) {
