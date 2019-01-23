@@ -11,7 +11,7 @@ function draw() {
   //code+=getModelDivCode(viewpoint_root,viewpoint_name);
    code += getModelDivCode(viewpoint_root,viewpoint_name);
    //console.log(code);
-   var elem = document.getElementById("model");
+   var elem = document.getElementById("model-display-container");
    elem.innerHTML =  code;
 }
 
