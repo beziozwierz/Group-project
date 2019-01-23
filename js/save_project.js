@@ -2,7 +2,6 @@
 
 function parseDiv (Div) {
 	var inner = [];
-	var parent = [];
 	
 	if (Div.inner.length > 0) {
 		for(var i = 0; i < Div.inner.length ; i++){
@@ -16,7 +15,6 @@ function parseDiv (Div) {
         class: Div.class,
         style: Div.style,
         name: Div.name,
-		parent: [],
 		height: Div.height,	
 		width: Div.width,
 		float: Div.float,
@@ -25,7 +23,7 @@ function parseDiv (Div) {
 }
 
 function restoreDiv (json) {
-	var div = new Div(json.name, json.width, json.height, json.parent);
+	var div = new Div(json.name, json.width, json.height);
 	
 	if (json.inner.length > 0) {
 		for(var i = 0; i < json.inner.length ; i++){
@@ -57,14 +55,14 @@ function fn_load_html() {
 		url: "load_html.php",
 		method : "get",
 		success: function(result) {
-			// console.log(result);
+			console.log(result);
 			html = JSON.parse(result);
 			console.log(JSON.parse(html));	
 			
 			model = restoreDiv(JSON.parse(html));
 			console.log(model);
-			viewpoint_name = "model";
-			viewpoint_root = model;
+			viewpoint_name = "model_0";
+			viewpoint_root = model.inner[0];
 			zoomed = false;
 			draw();
 	  	}
