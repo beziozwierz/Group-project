@@ -87,6 +87,7 @@ function css_element_select(element){
 }
 
 function html_element_hover(element){
+    document.getElementById("model-inspector-description-container").style.display = "block";
     document.getElementById("model-inspector-css-container").style.display = "none";
     var my_position = element.getBoundingClientRect();
     var inspector = document.getElementById("model-inspector-container");
@@ -169,6 +170,13 @@ function html_element_hover(element){
                 "Use the <ul> tag together with the <li> tag to create unordered lists.";
             needed.style.display = "block";
             needed.innerText = "Needs: <li> tag inside";
+            optional.style.display = "none";
+            break;
+        case "List element":
+            tag.innerText = "<li>";
+            description.innerText = "The <li> tag defines a list item.\n" +
+                "The <li> tag is used in ordered lists(<ol>), unordered lists (<ul>).";
+            needed.style.display = "none";
             optional.style.display = "none";
             break;
         case "Webpage link":
@@ -311,9 +319,11 @@ function css_element_add(element){
                 tmp_array.push(document.getElementsByClassName("model-inspector-css-drop-element-edit")[i].value);
             }
 
-            target.innerHTML += '<div class="model-inspector-css-drop-element">\n' +
-                '                       ' + result + '\n' +
-                '                    <input type="text" class="model-inspector-css-drop-element-edit">\n' +
+            target.innerHTML += '<div class="model-inspector-css-drop-element">' +
+                '                   <div class="model-inspector-css-drop-element-description">\n' +
+                '                       ' + result +
+                '                   </div> ' +
+                '                   <input type="text" class="model-inspector-css-drop-element-edit">\n' +
                 '                </div>';
 
             for(var i = 0; i < tmp_array.length; i++){
@@ -323,6 +333,7 @@ function css_element_add(element){
 }
 
 function css_element_hover(element){
+    document.getElementById("model-inspector-description-container").style.display = "block";
     document.getElementById("model-inspector-css-container").style.display = "block";
     var my_position = element.getBoundingClientRect();
     var inspector = document.getElementById("model-inspector-container");
@@ -352,9 +363,78 @@ function css_element_hover(element){
     if(parseInt(inspector.style.top) +  $('#model-inspector-container').height() > $(window).height()){
         inspector.style.top = ($(window).height() - $('#model-inspector-container').height()).toString() + "px";
     }
+}
 
+function css_saved_hover(element, type){
+    var amount;
+    var edited;
+
+    if(type === "ID"){
+        amount = global_CSS_id.length;
+        for(var i = 0; i < amount; i++){
+            if(global_CSS_id[i].get_name() === element.innerText){
+                edited = global_CSS_id[i];
+            }
+        }
+    }
+    else if (type === "Class"){
+        amount = global_CSS_class.length;
+        for(var i = 0; i < amount; i++){
+            if(global_CSS_class[i].get_name() === element.innerText){
+                edited = global_CSS_class[i];
+            }
+        }
+    }
+
+    document.getElementById("model-inspector-description-container").style.display = "none";
+    document.getElementById("model-inspector-css-container").style.display = "block";
+    var my_position = element.getBoundingClientRect();
+    var inspector = document.getElementById("model-inspector-container");
+    var target = document.getElementById("model-inspector-css-drop-area");
+    inspector.style.display = "block";
+    inspector.style.top = my_position.top.toString() + "px";
+
+    target.innerHTML = "";
+    var cut;
+    for(var i = 0; i < edited.elements.length; i++){
+        cut = edited.elements[i].search(":");
+        target.innerHTML += '<div class="model-inspector-css-drop-element">\n' +
+            '                       ' + edited.elements[i].substring(0, cut + 1) + '\n' +
+            '                    <input type="text" class="model-inspector-css-drop-element-edit">\n' +
+            '                </div>';
+        document.getElementsByClassName("model-inspector-css-drop-element-edit")[i].value = edited.elements[i].substring(cut + 1, edited.elements[i].length);
+    }
+
+    inspector.style.top = (parseInt(inspector.style.top) - $('#model-inspector-container').height() / 2).toString() + "px";
+    if(parseInt(inspector.style.top) < 0){
+        inspector.style.top = "0px";
+    }
+
+    if(parseInt(inspector.style.top) +  $('#model-inspector-container').height() > $(window).height()){
+        inspector.style.top = ($(window).height() - $('#model-inspector-container').height()).toString() + "px";
+    }
 }
 
 function element_leaved(){
     document.getElementById("model-inspector-container").style.display = "block";
+}
+
+function modifyInspectorAction(){
+    switch (document.getElementById("model-inspector-css-type").innerText) {
+        case "<ID Create>":
+
+            break;
+
+        case "<Class Create>":
+
+            break;
+
+        case "<ID Update>":
+
+            break;
+
+        case "<Class Update>":
+
+            break;
+    }
 }
