@@ -26,6 +26,7 @@ function dragHtmlElement(ev){//}, type) {
   ev.dataTransfer.setData("text", name);
   global_name = name;
   global_type = "HTML";
+  element_leaved();
 }
 
 

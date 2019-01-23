@@ -236,3 +236,14 @@ input:focus{
     margin-top: 3px;
     display: none;
 }
+#toolbar-templates-categories-container{
+    width: 100%;
+    float: left;
+    margin-top: 3px;
+    display: none;
+}
+.template-drag-element{
+  width: 98%;
+  height: 40px;
+  border: 1px dotted white;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>WEB-Blocks</title>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/model.css">
 
 
     <script src="js/tree_classes.js"></script>
@@ -303,7 +304,22 @@
             </div>
         </div>
         <div id="toolbar-templates-categories-container">
+          <div class="toolbar-category-button">
+              <div class="toolbar-category-title" onclick="template_element_select(this)">
+                  Default templates
+              </div>
+              <div class="toolbar-category-content" id="default-templates-container">
+                  
+              </div>
+          </div>
+          <div class="toolbar-category-button">
+              <div class="toolbar-category-title" onclick="template_element_select(this)">
+                  Custom templates
+              </div>
+              <div class="toolbar-category-content" id="custom-templates-container">
 
+              </div>
+          </div>
         </div>
     </div>
     <div id="toolbar-resize">

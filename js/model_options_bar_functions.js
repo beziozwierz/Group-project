@@ -117,9 +117,8 @@ function create_template(event,id){
     window.alert("Błąd, podaj inna nazwe");
   } else {
    templates[name] = copy;
-   var v = document.getElementById("toolbar-container-template");
-   v.innerHTML+= '<div id="'+name+'" draggable="true" ondragstart="dragTemplate(event)"'+
-     ' style="width: 40px; height: 40px; border: 1px solid black;">'+name+'</div>';
+   var v = document.getElementById("custom-templates-container");
+   v.innerHTML+= '<div id="'+name+'" class="toolbar-content-element" draggable="true" ondragstart="dragTemplate(event)">'+name+'</div>';
   }
 
 }

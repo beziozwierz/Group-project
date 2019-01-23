@@ -86,6 +86,17 @@ function css_element_select(element){
     }
 }
 
+function template_element_select(element){
+    switch(element.innerText){
+        case "Default templates":
+            $("#default-templates-container").slideToggle("slow");
+            break;
+        case "Custom templates":
+            $("#custom-templates-container").slideToggle("slow");
+            break;
+    }
+}
+
 function html_element_hover(element){
     document.getElementById("model-inspector-description-container").style.display = "block";
     document.getElementById("model-inspector-css-container").style.display = "none";
@@ -416,7 +427,7 @@ function css_saved_hover(element, type){
 }
 
 function element_leaved(){
-    document.getElementById("model-inspector-container").style.display = "block";
+    document.getElementById("model-inspector-container").style.display = "none";
 }
 
 function modifyInspectorAction(){
