@@ -256,7 +256,7 @@ function modifyCSSObject(){
     var inputs = document.getElementsByClassName("model-inspector-css-drop-element-edit");
     if(document.getElementById("model-inspector-css-title").value.length > 0) {
         switch (document.getElementById("model-inspector-css-type").innerText) {
-            case "<ID Create>":
+            case "<Create ID>":
                 global_CSS_id.push(new CSS());
                 target = global_CSS_id.length - 1;
                 global_CSS_id[target].set_name(document.getElementById("model-inspector-css-title").value);
@@ -266,7 +266,7 @@ function modifyCSSObject(){
                 refreshCSS("ID");
                 break;
 
-            case "<Class Create>":
+            case "<Create Class>":
                 global_CSS_class.push(new CSS());
                 target = global_CSS_class.length - 1;
                 global_CSS_class[target].set_name(document.getElementById("model-inspector-css-title").value);
@@ -276,13 +276,37 @@ function modifyCSSObject(){
                 refreshCSS("Class");
                 break;
 
-            case "<ID Update>":
+            case "<Edit ID>":
+                target = global_CSS_id.length - 1;
+                for(var i = 0; i < global_CSS_id.length; i++) {
+                    if (global_CSS_id[i].get_name() === document.getElementById("model-inspector-css-title").value) {
+                        target = i;
+                    }
+                }
+                global_CSS_id[target].clear();
+                global_CSS_id[target].set_name(document.getElementById("model-inspector-css-title").value);
+                for (var i = 0; i < inputs.length; i++) {
+                    global_CSS_id[target].add(descriptions[i].innerText + inputs[i].value + ";");
+                }
                 refreshCSS("ID");
                 break;
 
-            case "<Class Update>":
+            case "<Edit Class>":
+                target = global_CSS_class.length - 1;
+                for(var i = 0; i < global_CSS_class.length; i++) {
+                    if (global_CSS_class[i].get_name() === document.getElementById("model-inspector-css-title").value) {
+                        target = i;
+                    }
+                }
+                global_CSS_class[target].clear();
+                global_CSS_class[target].set_name(document.getElementById("model-inspector-css-title").value);
+                for (var i = 0; i < inputs.length; i++) {
+                    global_CSS_class[target].add(descriptions[i].innerText + inputs[i].value + ";");
+                }
                 refreshCSS("Class");
                 break;
         }
     }
+    document.getElementById("model-inspector-css-type").innerText = "<Create ID>";
+    document.getElementById("model-inspector-container").style.display = "none";
 }

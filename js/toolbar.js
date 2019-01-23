@@ -426,26 +426,30 @@ function css_saved_hover(element, type){
     }
 }
 
+function display_me(){
+    document.getElementById("model-inspector-container").style.display = "block";
+}
+
 function element_leaved(){
     document.getElementById("model-inspector-container").style.display = "none";
 }
 
 function modifyInspectorAction(){
     switch (document.getElementById("model-inspector-css-type").innerText) {
-        case "<ID Create>":
-
+        case "<Create ID>":
+            document.getElementById("model-inspector-css-type").innerText = "<Create Class>";
             break;
 
-        case "<Class Create>":
-
+        case "<Create Class>":
+            document.getElementById("model-inspector-css-type").innerText = "<Create ID>";
             break;
 
-        case "<ID Update>":
-
+        case "<Edit ID>":
+            document.getElementById("model-inspector-css-type").innerText = "<Create ID>";
             break;
 
-        case "<Class Update>":
-
+        case "<Edit Class>":
+            document.getElementById("model-inspector-css-type").innerText = "<Create Class>";
             break;
     }
 }
