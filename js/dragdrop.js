@@ -214,17 +214,25 @@ function allowDrop2(ev){
 
 
 function modifyCSSObject(){
+    alert(document.getElementById("model-inspector-css-type").innerText);
     var target;
-    switch ($('#model-inspector-css-type').innerText){
+    var inputs = document.getElementsByClassName("model-inspector-css-drop-element-edit");
+    switch (document.getElementById("model-inspector-css-type").innerText){
         case "<ID Create>":
             global_CSS_id.push(new CSS());
-            target = global_CSS_id.length;
+            target = global_CSS_id.length - 1;
             global_CSS_id[target].set_name(document.getElementById("model-inspector-css-title").value);
+            for (var i = 0; i < inputs.length; i++){
+                global_CSS_id[target].add(inputs[i].innerText + inputs[i].value + ";");
+            }
             break;
-        case "<Class Create>":
+        case "aaa":
             global_CSS_class.push(new CSS());
-            target = global_CSS_class.length;
+            target = global_CSS_class.length - 1;
             global_CSS_class[target].set_name(document.getElementById("model-inspector-css-title").value);
+            for (var i = 0; i < inputs.length; i++){
+                global_CSS_class[target].add(inputs[i].innerText + inputs[i].value + ";");
+            }
             break;
         case "<ID Update>":
 
@@ -234,4 +242,5 @@ function modifyCSSObject(){
 
             break;
     }
+    alert("ID length: " + global_CSS_class.length);
 }

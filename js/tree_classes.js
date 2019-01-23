@@ -15,6 +15,10 @@ class CSS{
     get(number){
         return this.elements[number];
     }
+
+    clear(){
+        this.elements.length = 0;
+    }
 }
 
 class Div {
@@ -35,6 +39,7 @@ class Div {
       this.type = 'container';
     }
   }
+
   addCSS(object, type){
       if(type === "id"){
           this.id.push(object);
