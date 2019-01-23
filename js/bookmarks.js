@@ -48,6 +48,12 @@ function parse_string(str){
 
 
 }
+
+/***
+FUnkcja wyświetlająca zakładki 
+@param option - parametr odpowiadujący za wyb<or zakładki
+1 - pokż scheme, 2 - pokaż kod
+***/
 function work_site(option){
     var elements = document.getElementsByClassName("work-site-container");
     for (var i = 0; i < elements.length; i++ ) {
