@@ -167,6 +167,7 @@ function drop(ev) {
             parent.inner[i].width = 90;
           }
       }
+      //TODO: popup src
     } else if(global_type === "CSS_ID") {
       for (var i = 0; i < global_CSS_id.length; i++) {
           if (global_CSS_id[i].get_name() === ev.dataTransfer.getData("text")) {

@@ -80,18 +80,27 @@ function editText(event,id){
 
   code = '<div class="edit-element-close" ';
   code += 'onclick="close_me('+"'edit-text-container')"+'">×</div>';
-  code += '<h1>Zmień tekst:</h1>'
-  code += '<input type="text" name="content" value="';
+  code += '<h4 style="text-align: center; margin-top: 0px; margin-bottom: 0px;">Change text:</h1>'
+  code += '<textarea id= "edit-text-input">';
+  code += div.text;
+  code+='</textarea>'
+  code += '<div id="edit-text-btn" onclick="saveText()">SAVE CHANGES</div>';
+/*
+  code = '<div class="edit-element-close" ';
+  code += 'onclick="close_me('+"'edit-text-container')"+'">×</div>';
+  code += '<h4 style="text-align: center;">Zmień tekst:</h1>'
+  code += '<input id= "edit-text-input" type="text" name="content" value="';
   code += div.text;
   code += '"><br/><br/>';
-  code += '<div id="edit-text-btn" onclick="saveText()">SAVE</div>';
+  code += '<div id="edit-text-btn" onclick="saveText()">SAVE</div>';*/
 
   var editor = document.getElementById("edit-text-container");
   editor.style.display = 'block';
   editor.innerHTML = code;
 }
 function saveText(div){
-  text = document.getElementsByName("content")[0].value;
+  //text = document.getElementsByName("content")[0].value;
+  text = document.getElementById("edit-text-input").value;
   currently_edited.text = text;
   close_me('edit-text-container');
   console.log(text);
