@@ -20,9 +20,11 @@ Zdarzenie "drag" dla elementów html w
 pasku narzędzi:
 Zapamiętujemy nazwę chwyconego elementu
 ***/
-function dragHtmlElement(ev, type) {
-  ev.dataTransfer.setData("text", ev.target.id);
-  global_name = type;
+function dragHtmlElement(ev){//}, type) {
+  name = nameToTag(ev.target.innerText);
+  //ev.dataTransfer.setData("text", ev.target.id);
+  ev.dataTransfer.setData("text", name);
+  global_name = name;
   global_type = "HTML";
 }
 

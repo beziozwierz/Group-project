@@ -21,7 +21,7 @@
     <script src="js/toolbar.js"></script>
     <script src="js/preview.js"></script>
     <script src="js/save_project.js"></script>
-
+    <script src="js/name_to_tag.js"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -45,13 +45,13 @@
                     Containers
                 </div>
                 <div class="toolbar-category-content" id="toolbar-HTML_Containers">
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Default container
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Text container
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Website container
                     </div>
                 </div>
@@ -66,42 +66,42 @@
                             ▼Text headers▼
                         </div>
                         <div class="toolbar-element-extended-content" id="toolbar-HTML_TextHeaders">
-                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                                 Great header
                             </div>
-                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                                 Huge header
                             </div>
-                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                                 Big header
                             </div>
-                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                                 Medium header
                             </div>
-                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                                 Small header
                             </div>
-                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                            <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                                 Tiny header
                             </div>
                         </div>
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Table
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Table row
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
-                        Table cel
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
+                        Table cell
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Ordered list
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Unordered list
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         List element
                     </div>
                 </div>
@@ -111,16 +111,16 @@
                     External sources
                 </div>
                 <div class="toolbar-category-content" id="toolbar-HTML_ExternalSources">
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Webpage link
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Graphics
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Audio
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Video
                     </div>
                 </div>
@@ -130,22 +130,22 @@
                     Forms
                 </div>
                 <div class="toolbar-category-content" id="toolbar-HTML_Forms">
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Form
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Input
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Textarea
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Button
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Select
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Option
                     </div>
                 </div>
@@ -155,22 +155,22 @@
                     Semantics
                 </div>
                 <div class="toolbar-category-content" id="toolbar-HTML_Semantics">
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Header
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Navigation
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Section
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Article
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Aside
                     </div>
-                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()">
+                    <div class="toolbar-content-element"  onmouseover="html_element_hover(this)" onmouseleave="element_leaved()" draggable="true" ondragstart="dragHtmlElement(event)">
                         Footer
                     </div>
                 </div>
@@ -340,6 +340,9 @@
                     CREATE
                 </div>
             </div>
+        </div>
+        <div id="model-display-container">
+
         </div>
     </div>
     <div id="model-resize">
