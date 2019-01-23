@@ -385,6 +385,8 @@ function css_saved_hover(element, type){
         for(var i = 0; i < amount; i++){
             if(global_CSS_id[i].get_name() === element.innerText){
                 edited = global_CSS_id[i];
+                document.getElementById("model-inspector-css-type").innerText = "<Edit ID>";
+                document.getElementById("model-inspector-css-create").innerText = "UPDATE";
             }
         }
     }
@@ -393,6 +395,8 @@ function css_saved_hover(element, type){
         for(var i = 0; i < amount; i++){
             if(global_CSS_class[i].get_name() === element.innerText){
                 edited = global_CSS_class[i];
+                document.getElementById("model-inspector-css-type").innerText = "<Edit Class>";
+                document.getElementById("model-inspector-css-create").innerText = "UPDATE";
             }
         }
     }
@@ -409,11 +413,16 @@ function css_saved_hover(element, type){
     var cut;
     for(var i = 0; i < edited.elements.length; i++){
         cut = edited.elements[i].search(":");
-        target.innerHTML += '<div class="model-inspector-css-drop-element">\n' +
-            '                       ' + edited.elements[i].substring(0, cut + 1) + '\n' +
-            '                    <input type="text" class="model-inspector-css-drop-element-edit">\n' +
+        target.innerHTML += '<div class="model-inspector-css-drop-element">' +
+            '                   <div class="model-inspector-css-drop-element-description">\n' +
+            '                       ' + edited.elements[i].substring(0, cut + 1) +
+            '                   </div> ' +
+            '                   <input type="text" class="model-inspector-css-drop-element-edit">\n' +
             '                </div>';
-        document.getElementsByClassName("model-inspector-css-drop-element-edit")[i].value = edited.elements[i].substring(cut + 1, edited.elements[i].length);
+    }
+    for(var i = 0; i < edited.elements.length; i++){
+        cut = edited.elements[i].search(":");
+        document.getElementsByClassName("model-inspector-css-drop-element-edit")[i].value = edited.elements[i].substring(cut + 1, edited.elements[i].length - 1);
     }
 
     inspector.style.top = (parseInt(inspector.style.top) - $('#model-inspector-container').height() / 2).toString() + "px";

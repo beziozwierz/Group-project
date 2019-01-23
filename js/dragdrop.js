@@ -21,7 +21,7 @@ pasku narzędzi:
 Zapamiętujemy nazwę chwyconego elementu
 ***/
 function dragHtmlElement(ev){//}, type) {
-  name = nameToTag(ev.target.innerText);
+  var name = nameToTag(ev.target.innerText);
   //ev.dataTransfer.setData("text", ev.target.id);
   ev.dataTransfer.setData("text", name);
   global_name = name;
@@ -167,16 +167,23 @@ function drop(ev) {
             parent.inner[i].width = 90;
           }
       }
-    } else if(global_type === "CSS"){
-        var new_css = new CSS();
-        new_css.set_name(document.getElementById("edit-element-name-container").value);
-        var tmp = document.getElementsByClassName("edit-element-css");
-        var tmp2 = document.getElementsByClassName("edit-element-input");
-        for (var i = 0; i < tmp.length; i++){
-            new_css.add(tmp[i].innerText + tmp2[i].value + ";");
-        }
-        parent.inner[0].addCSS(new_css, "id");
-    } else if(global_type === "TREE"){
+    } else if(global_type === "CSS_ID") {
+      for (var i = 0; i < global_CSS_id.length; i++) {
+          if (global_CSS_id[i].get_name() === ev.dataTransfer.getData("text")) {
+              div.id.push(global_CSS_id[i]);
+              console.log(getCssCode());
+              break;
+          }
+      }
+  } else if(global_type === "CSS_Class") {
+      for (var i = 0; i < global_CSS_class.length; i++) {
+          if (global_CSS_class[i].get_name() === ev.dataTransfer.getData("text")) {
+              div.id.push(global_CSS_class[i]);
+              console.log(getCssCode());
+              break;
+          }
+      }
+  } else if(global_type === "TREE"){
         //tworzenie kopii poddrzewa (templatki)
         template_name = ev.dataTransfer.getData("text");
         copy = JSON.parse(JSON.stringify(templates[template_name]));
@@ -208,9 +215,9 @@ function dragTemplate(ev) {
 }
 
 
-function drag2(ev) {
+function drag2(ev, type) {
     ev.dataTransfer.setData("text", ev.target.innerText);
-    global_type = "CSS";
+    global_type = "CSS_" + type;
 }
 
 function allowDrop2(ev){
@@ -232,7 +239,7 @@ function refreshCSS(type){
         target = document.getElementById("toolbar-CSS_CreatedIDs");
         target.innerHTML = "";
         for(var i = 0; i < global_CSS_id.length; i++){
-            target.innerHTML += "<div class=\"toolbar-content-element\" onmouseover=\"css_saved_hover(this, 'ID')\" onmouseleave=\"element_leaved()\">\n" +
+            target.innerHTML += "<div class=\"toolbar-content-element\" onmouseover=\"css_saved_hover(this, 'ID')\" onmouseleave=\"element_leaved()\" draggable=\"true\" ondragstart=\"drag2(event, 'ID')\">\n" +
                 "                        " + global_CSS_id[i].get_name() + "\n" +
                 "                    </div>"
         }
@@ -241,7 +248,7 @@ function refreshCSS(type){
         target = document.getElementById("toolbar-CSS_CreatedClasses");
         target.innerHTML = "";
         for(var i = 0; i < global_CSS_class.length; i++){
-            target.innerHTML += "<div class=\"toolbar-content-element\" onmouseover=\"css_saved_hover(this, 'Class')\" onmouseleave=\"element_leaved()\">\n" +
+            target.innerHTML += "<div class=\"toolbar-content-element\" onmouseover=\"css_saved_hover(this, 'Class')\" onmouseleave=\"element_leaved()\" draggable=\"true\" ondragstart=\"drag2(event, 'Class')\">\n" +
                 "                        " + global_CSS_class[i].get_name() + "\n" +
                 "                    </div>"
         }

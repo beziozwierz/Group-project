@@ -20,11 +20,12 @@ function getInnerPageCode(div, depth){
     code += '<'+div.inner[i].name; //name: main, nav itp
     //dodanie id i class(jeżeli istnieją)
     if (typeof div.inner[i].id !== 'undefined' && div.inner[i].id.length > 0) {
-        code+=' id="';
-        for(var k=0; k<div.inner[i].id.length; k++ ){
-          code+= div.inner[i].id[k].get_name()+;
+        code += ' id="';
+        for (var k = 0; k < div.inner[i].id.length; k++) {
+            code += div.inner[i].id[k].get_name() +' ';
         }
-        code+='"';
+        code += '"';
+    }
     if (typeof div.inner[i].class !== 'undefined' && div.inner[i].class.length > 0) {
         code+=' class="';
         for(var k=0; k<div.inner[i].class.length; k++ ){
@@ -50,10 +51,10 @@ function getInnerPageCode(div, depth){
 }
 
 
-function getCssCode{
+function getCssCode(){
   code="";
   //kod dla ID'ków
-  for(var i=0; i<global_CSS_id.lenth; i++){
+  for(var i=0; i<global_CSS_id.length; i++){
     code+='#'+global_CSS_id[i].get_name()+'{\n';
     for(var j=0; j<global_CSS_id[i].elements.length; j++){
       code+='\t'+global_CSS_id[i].elements[j]+'\n';
@@ -61,7 +62,7 @@ function getCssCode{
     code+='}\n';
   }
   //kod dla klas
-  for(var i=0; i<global_CSS_class.lenth; i++){
+  for(var i=0; i<global_CSS_class.length; i++){
     code+='.'+global_CSS_class[i].get_name()+'{\n';
     for(var j=0; j<global_CSS_class[i].elements.length; j++){
       code+='\t'+global_CSS_class[i].elements[j]+'\n';
