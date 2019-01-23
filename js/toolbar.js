@@ -77,6 +77,12 @@ function css_element_select(element){
         case "▼Position value▼":
             $("#toolbar-CSS_PositionValues").slideToggle("slow");
             break;
+        case "Created IDs":
+            $("#toolbar-CSS_CreatedIDs").slideToggle("slow");
+            break;
+        case "Created Classes":
+            $("#toolbar-CSS_CreatedClasses").slideToggle("slow");
+            break;
     }
 }
 
@@ -224,6 +230,15 @@ function html_element_hover(element){
                 "</div>";
             break;
     }
+
+    inspector.style.top = (parseInt(inspector.style.top) - $('#model-inspector-container').height() / 2).toString() + "px";
+    if(parseInt(inspector.style.top) < 0){
+        inspector.style.top = "0px";
+    }
+
+    if(parseInt(inspector.style.top) +  $('#model-inspector-container').height() > $(window).height()){
+        inspector.style.top = ($(window).height() - $('#model-inspector-container').height()).toString() + "px";
+    }
 }
 
 function css_element_add(element){
@@ -291,11 +306,19 @@ function css_element_add(element){
         }
 
         if(target.innerHTML.search(result) === -1) {
+            var tmp_array = [];
+            for(var i = 0; i < $('.model-inspector-css-drop-element-edit').length; i++){
+                tmp_array.push(document.getElementsByClassName("model-inspector-css-drop-element-edit")[i].value);
+            }
 
             target.innerHTML += '<div class="model-inspector-css-drop-element">\n' +
                 '                       ' + result + '\n' +
                 '                    <input type="text" class="model-inspector-css-drop-element-edit">\n' +
                 '                </div>';
+
+            for(var i = 0; i < tmp_array.length; i++){
+                document.getElementsByClassName("model-inspector-css-drop-element-edit")[i].value = tmp_array[i];
+            }
         }
 }
 
@@ -320,6 +343,16 @@ function css_element_hover(element){
             optional.style.display = "none";
             break;
     }
+
+    inspector.style.top = (parseInt(inspector.style.top) - $('#model-inspector-container').height() / 2).toString() + "px";
+    if(parseInt(inspector.style.top) < 0){
+        inspector.style.top = "0px";
+    }
+
+    if(parseInt(inspector.style.top) +  $('#model-inspector-container').height() > $(window).height()){
+        inspector.style.top = ($(window).height() - $('#model-inspector-container').height()).toString() + "px";
+    }
+
 }
 
 function element_leaved(){

@@ -14,6 +14,9 @@ templates['test'] = x;
 var global_name = "HTML";
 var global_type = "HTML";
 
+var global_CSS_id = [];
+var global_CSS_class = [];
+
 /***
 Aktualnie 'chwycony' element
 ***/

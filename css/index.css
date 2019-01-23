@@ -171,7 +171,6 @@ input:focus{
 
 #model-inspector-css-container{
     width: 100%;
-    padding-bottom: 5px;
     float: left;
     border-top: dashed 3px #3a4043;
 }
@@ -210,6 +209,17 @@ input:focus{
     padding: 0 10px;
     line-height: 22px;
     font-size: 14px;
+}
+
+#model-inspector-css-create{
+    width: 100%;
+    margin-top: 7px;
+    float: left;
+    line-height: 34px;
+    font-size: 20px;
+    border-top: dashed 3px #3a4043;
+    text-align: center;
+    cursor: pointer;
 }
 
 .model-inspector-css-drop-element-edit{

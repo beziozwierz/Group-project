@@ -202,3 +202,36 @@ function allowDrop2(ev){
         'outline': "solid 2px #0000ff"
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+function modifyCSSObject(){
+    var target;
+    switch ($('#model-inspector-css-type').innerText){
+        case "<ID Create>":
+            global_CSS_id.push(new CSS());
+            target = global_CSS_id.length;
+            global_CSS_id[target].set_name(document.getElementById("model-inspector-css-title").value);
+            break;
+        case "<Class Create>":
+            global_CSS_class.push(new CSS());
+            target = global_CSS_class.length;
+            global_CSS_class[target].set_name(document.getElementById("model-inspector-css-title").value);
+            break;
+        case "<ID Update>":
+
+            break;
+        case "<Class Update>":
+
+
+            break;
+    }
+}
