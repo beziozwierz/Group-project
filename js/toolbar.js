@@ -494,6 +494,7 @@ function model_select(element){
             document.getElementById("model-blocks-select-container").style.display = "none";
             document.getElementById("model-html-select-container").style.display = "block";
             document.getElementById("model-css-select-container").style.display = "none";
+            work_site(1);
             break;
         case "CSS":
             document.getElementById("model-blocks-select-container").style.display = "none";

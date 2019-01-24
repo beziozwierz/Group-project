@@ -300,3 +300,6 @@ input:focus{
     float: left;
     display: none;
 }
+.hljs {
+    padding: 0px !important;
+}

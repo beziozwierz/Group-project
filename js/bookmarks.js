@@ -65,8 +65,8 @@ function work_site(option){
             document.getElementById("work-site-container-drop").style.display = "block";
             break;
         case 1:
-            document.getElementById("work-site-container-drop").style.display = "none";
-            var elem = document.getElementById("work-site-container-code");
+            document.getElementById("model-blocks-select-container").style.display = "none";
+            var elem = document.getElementById("model-html-select-container");
             elem.style.display = "block";
             var str = "<pre><code class=\"html\">" + parse_string(getPageCode()) + "</code></pre>";
             elem.innerHTML =str;

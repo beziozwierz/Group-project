@@ -24,9 +24,12 @@
     <script src="js/preview.js"></script>
     <script src="js/save_project.js"></script>
     <script src="js/name_to_tag.js"></script>
+    <script src="syntaxHighlighter/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="syntaxHighlighter/styles/atom-one-dark.css">
 </head>
 <body onload="draw()">
     <div id="toolbar-main-container">
@@ -351,7 +354,7 @@
             <div class="toolbar-button" onclick="model_select(this)">
                 BLOCKS
             </div>
-            <div class="toolbar-button" onclick="model_select(this)">
+            <div class="toolbar-button" onclick="model_select(this);">
                 HTML
             </div>
             <div class="toolbar-button" onclick="model_select(this)">
