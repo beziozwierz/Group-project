@@ -531,3 +531,10 @@ function model_resize() {/*
         document.getElementById("model-main-container").style.width = new_pos.toString() + "%";
     }*/
 }
+
+function draw_preview(){
+    var target = document.getElementById("preview-content-container");
+    target.innerHTML = getPageCode();
+
+    $('head').append('<style type="text/css">' + getCssCode() + '</style>');
+}

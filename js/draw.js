@@ -110,7 +110,6 @@ function getEditionPanelCode(name,type){
   code='<div class="model-options-bar">';
 
   code += '<div class="model-element-title">' + name + '</div>';
-  code += '<div class="model-element-icons-container">';
   if(name!=="MainModel"){
       code+='<img src="icons/delete.png" class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)"/>';
       if(name!=='text'){
@@ -122,7 +121,6 @@ function getEditionPanelCode(name,type){
           code+='<img src="icons/text.png" class="model-options-bar-btn" onclick="editText(event,this.parentNode.parentNode.id)"/>';
       }
   }
-  code+='</div>\n';
   code+='</div>\n';
   return code;
 }

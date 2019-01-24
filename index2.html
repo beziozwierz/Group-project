@@ -30,6 +30,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="syntaxHighlighter/styles/atom-one-dark.css">
+
+    <style type="text/css">#Klasa1{
+        width:100px;
+        height:100px;
+        background-color:#00aa66;
+    }
+    </style>
 </head>
 <body onload="draw()">
     <div id="toolbar-main-container">
@@ -404,7 +411,7 @@
 
         </div>
     </div>
-    <div id="model-resize">
+    <div id="model-resize" onclick="draw_preview()">
 
     </div>
     <div id="preview-main-container">
@@ -418,6 +425,9 @@
             <div class="toolbar-button">
                 <a href="/" style="color: white; text-decoration: none">LOG IN</a>
             </div>
+        </div>
+        <div id="preview-content-container">
+
         </div>
     </div>
 </body>

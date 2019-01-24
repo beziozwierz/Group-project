@@ -303,6 +303,14 @@ input:focus{
     display: none;
 }
 
+#preview-content-container{
+    height: calc(100vh - 33px);
+    width: 100%;
+    overflow: auto;
+    margin-top: 3px;
+    float: left;
+}
+
 #model_0{
     margin: 3px 0 0 0;
     height: calc(100vh - 33px);

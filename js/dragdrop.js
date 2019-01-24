@@ -223,6 +223,7 @@ function drop(ev) {
         }*/
     }
   draw();
+  draw_preview();
 }
 function dragTemplate(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
