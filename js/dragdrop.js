@@ -208,6 +208,7 @@ function drop(ev) {
           div.inner[i].width = 90;
         }*/
     }
+     makeDocument();
   draw();
 }
 function dragTemplate(ev) {
