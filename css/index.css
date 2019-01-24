@@ -26,36 +26,38 @@ input:focus{
 
 #toolbar-main-container{
     width: 20%;
-    height: 800px;
+    height:100vh;
     float: left;
     background: #051B33;
 }
 
 #toolbar-resize{
     width: 3px;
-    height: 800px;
+    height:100vh;
     float: left;
     background: #e2e2e2;
+    cursor: col-resize;
 }
 
 #model-main-container{
     position: relative;
     width: 30%;
-    height: 800px;
+    height:100vh;
     float: left;
     background: #051B33;
 }
 
 #model-resize{
     width: 3px;
-    height: 800px;
+    height:100vh;
     float: left;
     background: #e2e2e2;
+    cursor: col-resize;
 }
 
 #preview-main-container{
     width: calc(50% - 6px);
-    height: 800px;
+    height:100vh;
     float: left;
     background: #051B33;
 }
@@ -78,9 +80,11 @@ input:focus{
 
 #toolbar-html-categories-container{
     width: 100%;
+    height: calc(100vh - 33px);
     float: left;
     margin-top: 3px;
     display: none;
+    overflow-y: auto;
 }
 
 .toolbar-category-button{
@@ -232,15 +236,19 @@ input:focus{
 
 #toolbar-css-categories-container{
     width: 100%;
+    height: calc(100vh - 33px);
     float: left;
     margin-top: 3px;
     display: none;
+    overflow-y: auto;
 }
 #toolbar-templates-categories-container{
     width: 100%;
+    height: calc(100vh - 33px);
     float: left;
     margin-top: 3px;
     display: none;
+    overflow-y: auto;
 }
 #toolbar-load-categories-container{
     width: 100%;
@@ -260,8 +268,35 @@ input:focus{
 #toolbar-save-categories-container .toolbar-category-title{
     text-align: center;
 }
-.template-drag-element{
-  width: 98%;
-  height: 40px;
-  border: 1px dotted white;
+/***************SCROLLBAR***************/
+
+::-webkit-scrollbar-track {
+    background-color: #e2e2e2;
+}
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background-color: #4B5358;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4B5358;
+}
+
+#model-blocks-select-container{
+    width: 100%;
+    float: left;
+    display: none;
+}
+
+#model-html-select-container{
+    width: 100%;
+    float: left;
+    display: none;
+}
+
+#model-css-select-container{
+    width: 100%;
+    float: left;
+    display: none;
 }

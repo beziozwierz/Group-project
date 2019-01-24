@@ -482,3 +482,44 @@ function modifyInspectorAction(){
             break;
     }
 }
+
+function model_select(element){
+    switch(element.innerText){
+        case "BLOCKS":
+            document.getElementById("model-blocks-select-container").style.display = "block";
+            document.getElementById("model-html-select-container").style.display = "none";
+            document.getElementById("model-css-select-container").style.display = "none";
+            break;
+        case "HTML":
+            document.getElementById("model-blocks-select-container").style.display = "none";
+            document.getElementById("model-html-select-container").style.display = "block";
+            document.getElementById("model-css-select-container").style.display = "none";
+            break;
+        case "CSS":
+            document.getElementById("model-blocks-select-container").style.display = "none";
+            document.getElementById("model-html-select-container").style.display = "none";
+            document.getElementById("model-css-select-container").style.display = "block";
+            break;
+    }
+}
+
+
+function toolbar_resize() {/*
+    var pos_x = event.clientX;
+    var new_pos = (pos_x / $(window).width()) * 100;
+    if (new_pos > 5) {
+        document.getElementById("toolbar-main-container").style.width = new_pos.toString() + "%";
+    }*/
+}
+
+function model_resize() {/*
+    var tmp = document.getElementById("toolbar-main-container");
+    alert(tmp.style.width);
+    var pos_x = event.clientX - parseFloat();
+    var new_pos = (pos_x / $(window).width()) * 100;
+    if (new_pos > 5) {
+        document.getElementById("model-main-container").style.width = new_pos.toString() + "%";
+    }*/
+}
+
+

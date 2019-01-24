@@ -5,6 +5,7 @@
     <title>WEB-Blocks</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/model.css">
+    <link rel="stylesheet" href="css/popups.css">
 
 
     <script src="js/tree_classes.js"></script>
@@ -15,7 +16,7 @@
 
 
     <script src="js/dragdrop.js"></script>
-    <script src="js/temp.js"></script>  <!-- temporarly for div creation/edition*/ -->
+    <script src="js/generate_code.js"></script>  <!-- temporarly for div creation/edition*/ -->
 
 
     <script src="js/bookmarks.js"></script>
@@ -342,17 +343,22 @@
 
     </div>
     <div id="model-main-container">
+        <div id="edit-text-container"> <!--edytor tekstu-->
+        </div>
+        <!--<div id="get-source-window">
+        </div>-->
         <div class="toolbar-button-container">
-            <div class="toolbar-button" onclick="category_select(this)">
+            <div class="toolbar-button" onclick="model_select(this)">
                 BLOCKS
             </div>
-            <div class="toolbar-button" onclick="category_select(this)">
+            <div class="toolbar-button" onclick="model_select(this)">
                 HTML
             </div>
-            <div class="toolbar-button" onclick="category_select(this)">
+            <div class="toolbar-button" onclick="model_select(this)">
                 CSS
             </div>
         </div>
+
         <div id="model-inspector-container" onmouseover="display_me()">
             <div id="model-inspector-description-container">
                 <div id="model-inspector-title">
@@ -384,7 +390,14 @@
                 </div>
             </div>
         </div>
-        <div id="model-display-container">
+
+        <div id="model-blocks-select-container">
+
+        </div>
+        <div id="model-html-select-container">
+
+        </div>
+        <div id="model-css-select-container">
 
         </div>
     </div>
