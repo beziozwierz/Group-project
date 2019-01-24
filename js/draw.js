@@ -6,7 +6,7 @@ na podstawie drzewa.
 function draw() {
   var code = "";
   if(zoomed){
-    code = '<div id="return-to-model" onclick="unzoom()" >POWRÓT DO MODELU</div>';
+    code = '<div id="return-to-model" onclick="unzoom()" >RETURN</div>';
   }
   //code+=getModelDivCode(viewpoint_root,viewpoint_name);
    code += getModelDivCode(viewpoint_root,viewpoint_name);
