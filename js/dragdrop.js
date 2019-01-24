@@ -74,7 +74,7 @@ function allowDrop(ev) {
       for (var i = 0; i < path.length; i++) {
         div = div.inner[path[i]];
       }
-      if(div.name === 'text'){
+      if((div.name === 'text')||(div.name ==='img')){
           leave(ev);
       }else{
           $( ev.target ).css({
@@ -152,7 +152,7 @@ function drop(ev) {
           parent.inner[i].width = 90;
         }
       } else if (condition < 0.8) { //middle of div drop
-          if(div.name === 'text'){
+          if((div.name === 'text')||(div.name === 'img')){
             return;
           }
           div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height);//, div);
@@ -167,6 +167,7 @@ function drop(ev) {
             parent.inner[i].width = 90;
           }
       }
+      //TODO: popup src
     } else if(global_type === "CSS_ID") {
       for (var i = 0; i < global_CSS_id.length; i++) {
           if (global_CSS_id[i].get_name() === ev.dataTransfer.getData("text")) {

@@ -38,6 +38,9 @@ class Div {
     }else{
       this.type = 'container';
     }
+    if(this.name === 'img'){
+      this.src = "";
+    }
   }
 
   addCSS(object, type){

@@ -250,11 +250,6 @@ input:focus{
     display: none;
     overflow-y: auto;
 }
-.template-drag-element{
-  width: 98%;
-  height: 40px;
-  border: 1px dotted white;
-}
 
 /***************SCROLLBAR***************/
 

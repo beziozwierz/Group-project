@@ -1,0 +1,28 @@
+#edit-text-container{
+  position: absolute;
+  width: 100%;
+  float: left;
+  background-color: #e2e2e2;
+  color: #3a4043;
+  display: none;
+  z-index: 10;
+  border: 3px solid black;
+}
+#edit-text-btn{
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid black;
+  width:30%;
+  margin-left: 35%;
+  margin-bottom: 3%;
+}
+#edit-text-btn:hover{
+  color: white;
+  background-color: black;
+}
+#edit-text-input{
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom:2%;
+  margin-top: 2%;
+}
