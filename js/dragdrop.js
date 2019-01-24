@@ -41,7 +41,6 @@ lub podświetla cały div (dla styli CSS)
 ***/
 function allowDrop(ev) {
   if(ev.target.className !== "model-div"){
-    console.log("NIE ODPALAĆ PODŚWIETLENIA");
     return;
   }
   ev.preventDefault();
@@ -50,9 +49,9 @@ function allowDrop(ev) {
   if(global_type === "CSS"){
     //podświetla środek
     $( ev.target ).css({
-      'borderTop': "1px solid black",
-      'borderBottom': "1px solid black",
-      'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
+      'borderTop': "1px solid #e2e2e2",
+      'borderBottom': "1px solid #e2e2e2",
+      'backgroundColor': "#4a6eb1"
     });
   }else{ //Nad elementem znajduje się element HTML lub TREE(template)
 
@@ -63,8 +62,9 @@ function allowDrop(ev) {
     //podświetlanie
     if(condition<0.2 && ev.target.id !== viewpoint_name){//over top of div, not 1st element in view
       $( ev.target ).css({
-        'borderTop': "20px double green",
-        'borderBottom': "1px solid black",
+        'marginTop': "-6px",
+        'borderTop': "12px solid #4a6eb1",
+        'borderBottom': "1px solid #e2e2e2",
         'backgroundImage': ""
       });
     }else if(condition<0.8){ //over middle of div
@@ -78,15 +78,15 @@ function allowDrop(ev) {
           leave(ev);
       }else{
           $( ev.target ).css({
-            'borderTop': "1px solid black",
-            'borderBottom': "1px solid black",
-            'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
+            'borderTop': "1px solid #e2e2e2",
+            'borderBottom': "1px solid #e2e2e2",
+              'backgroundColor': "#4a6eb1"
           });
       }
     }else if(ev.target.id !== viewpoint_name){  //over bottom of the div, not 1st element in view
       $( ev.target ).css({
-        'borderBottom': "20px double green",
-        'borderTop': "1px solid black",
+        'borderBottom': "12px solid #4a6eb1",
+        'borderTop': "1px solid #e2e2e2",
         'backgroundImage': ""
       });
     }
@@ -99,8 +99,8 @@ Powoduje Przywrócenie domyślnego stylu (znika podświetlenie)
 ***/
 function leave(event) { //reset div style (no highlight)
   $( event.target ).css({
-    'border': "1px solid black",
-    'backgroundImage': ""
+    'border': "1px solid #e2e2e2",
+    'backgroundColor': ""
   });
 }
 
@@ -221,6 +221,7 @@ function dragTemplate(ev) {
 function drag2(ev, type) {
     ev.dataTransfer.setData("text", ev.target.innerText);
     global_type = "CSS_" + type;
+    element_leaved();
 }
 
 function allowDrop2(ev){
