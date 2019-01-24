@@ -11,12 +11,12 @@ function getInnerPageCode(div, depth){
     //wcięcia
     for(var j=0;j<depth;j++){ code+="\t"; }
 
-    if(div.inner[i].name == "TEXT"){
+    if(div.inner[i].name === "text"){
       code += div.inner[i].text;
       code += '\n';
       continue;
     }
-
+    code += '<'+div.inner[i].name; //name: main, nav itp
     //dodanie id i class(jeżeli istnieją)
     if (typeof div.inner[i].id !== 'undefined' && div.inner[i].id.length > 0) {
         code += ' id="';
@@ -33,12 +33,11 @@ function getInnerPageCode(div, depth){
         code+='"';
     }
     //dla img stwórz pojedynczy tag!!
-    code += '<'+div.inner[i].name; //name: main, nav itp
     if(div.inner[i].name==='img'){
       code+=' src="'+div.inner[i].src+'"/>\n';
       continue;
     }
-    
+
     code+='>\n';
 
     //dodanie tekstu dla tekstowych zmiennych (h1,label itp)
