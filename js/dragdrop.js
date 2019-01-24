@@ -186,7 +186,7 @@ function drop(ev) {
       for (var i = 0; i < global_CSS_id.length; i++) {
           if (global_CSS_id[i].get_name() === ev.dataTransfer.getData("text")) {
               div.id.push(global_CSS_id[i]);
-              console.log(getCssCode());
+              //console.log(getCssCode());
               break;
           }
       }
@@ -194,7 +194,7 @@ function drop(ev) {
       for (var i = 0; i < global_CSS_class.length; i++) {
           if (global_CSS_class[i].get_name() === ev.dataTransfer.getData("text")) {
               div.class.push(global_CSS_class[i]);
-              console.log(getCssCode());
+              //console.log(getCssCode());
               break;
           }
       }

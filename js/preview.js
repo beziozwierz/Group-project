@@ -18,17 +18,17 @@ Tworzenie podswietlonej strony
 
 ***/
 function makeDocument() {
-  var frame = document.getElementById("theFrame");         
+  var frame = document.getElementById("theFrame");
   var doc = document.implementation.createHTMLDocument("New Document");
-  console.log(getPageCode());
+  //console.log(getPageCode());
 	var rows = htmlToElements(getPageCode());
-	for (var i = 0; i < rows.length; i++) {	
+	for (var i = 0; i < rows.length; i++) {
     doc.body.appendChild(rows[i]);
 }
   var destDocument = frame.contentDocument;
   var srcNode = doc.documentElement;
-  var newNode = destDocument.importNode(srcNode, true); 
+  var newNode = destDocument.importNode(srcNode, true);
   destDocument.replaceChild(newNode, destDocument.documentElement);
   document.getElementById('theFrame').contentWindow.location.reload();
-  // console.log(model);
+  // //console.log(model);
 }

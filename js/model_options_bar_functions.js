@@ -5,10 +5,60 @@ Funkcje przycisków w panelach divów w modelu
 /***
 ??Otwiera edycję styli danego diva??
 ***/
-function editStyle(event,element){
 
+  function editStyle(event,caller_div){
+    var div = model;
+    path = translateName(caller_div.id);
+    for(var i = 0 ; i < path.length; i++){
+      div = div.inner[path[i]];
+      index = path[i];
+    }
+    deleteStylesDiv = div;
+    code = '<div class="edit-element-close" ';
+    code += 'onclick="close_me('+"'edit-styles-window')"+'">×</div>';
+    if (typeof div.id !== 'undefined' && div.id.length > 0){
+      for (var k = 0; k < div.id.length; k++) {
+        xx = div.id[k].get_name();
+        code+='<div class="rm-style" '+
+        'onclick="delete_id_from_div('+"'"+xx+"'"+'); this.style.display='+"'none';"+'">'+xx+'</div>';
+      }
+    }
+    if (typeof div.class !== 'undefined' && div.class.length > 0){
+      for (var k = 0; k < div.class.length; k++) {
+        xx = div.class[k].get_name();
+        code+='<div class="rm-style" '+
+        'onclick="delete_class_from_div('+"'"+xx+"'"+'); this.style.display='+"'none';"+'">'+xx+'</div>';
+      }
+    }
+    console.log(code);
+    w = document.getElementById("edit-styles-window");
+    w.innerHTML = code;
+    w.style.display = "block";
+    /*
+    if (typeof div.inner[i].class !== 'undefined' && div.inner[i].class.length > 0){
+
+    }
+    code += </div>';
+    getElementById("edit-styles-window").style.display = "block";*/
 }
-
+function delete_id_from_div(name){
+  for (var k = 0; k < deleteStylesDiv.id.length; k++) {
+      if(deleteStylesDiv.id[k].get_name() === name){
+        deleteStylesDiv.id.splice(k, 1);
+        break;
+      }
+  }
+  draw();
+}
+function delete_class_from_div(name){
+  for (var k = 0; k < deleteStylesDiv.class.length; k++) {
+      if(deleteStylesDiv.class[k].get_name() === name){
+        deleteStylesDiv.class.splice(k, 1);
+        break;
+      }
+  }
+  draw();
+}
 /***
 Usuwa dany div z modelu i z drzewa
 TODO: (może) przenosi do kosza?
@@ -103,7 +153,7 @@ function saveText(div){
   text = document.getElementById("edit-text-input").value;
   currently_edited.text = text;
   close_me('edit-text-container');
-  console.log(text);
+  //console.log(text);
 }
 
 /***

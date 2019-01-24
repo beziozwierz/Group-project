@@ -10,7 +10,7 @@ function draw() {
   }
   //code+=getModelDivCode(viewpoint_root,viewpoint_name);
    code += getModelDivCode(viewpoint_root,viewpoint_name);
-   //console.log(code);
+   ////console.log(code);
    var elem = document.getElementById("model-blocks-select-container");
    elem.innerHTML =  code;
 }
@@ -46,7 +46,7 @@ Depth określa ilość wcięć,
 id określa przedrostek nazwy, po której możliwe będzie odnalezienie diva w drzewie.
 ***/
 function getInnerCode(div, depth, id){
-  console.log(div.name);
+  //console.log(div.name);
   var code = "";
 
   //var clear = false;

@@ -44,3 +44,4 @@ var zoomed = false;
 
 //przechowuje div do ktorego doda sie source
 var srcDiv;
+var deleteStylesDiv;

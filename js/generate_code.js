@@ -1,7 +1,7 @@
 function getPageCode(){
-  //console.log (JSON.stringify(model));
+  ////console.log (JSON.stringify(model));
   code = getInnerPageCode(model,0);
-  //console.log(code);
+  ////console.log(code);
   return code;
 }
 function getInnerPageCode(div, depth){

@@ -14,7 +14,7 @@ $( document ).ready(function () {
   //alert();
   $('form[name="update_currency"]').submit(function() {
     var bool = $.isNumeric(document.getElementById('currency_exchange').value);
-    console.log(document.getElementById('currency_exchange'));
+    //console.log(document.getElementById('currency_exchange'));
     if (!bool) {
       $('#error_report').html('<span style="color: red; font-size: 11px">Error: Please input correct data</span>');
       return false
