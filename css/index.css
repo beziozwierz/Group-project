@@ -288,6 +288,7 @@ input:focus{
     width: 100%;
     float: left;
     display: none;
+    overflow-y: auto;
 }
 
 #model-html-select-container{

@@ -80,6 +80,17 @@ function getInnerCode(div, depth, id){
       }
         code += '</div>';
     }
+
+      for(var k = 0; k < div.inner[i].class.length; k++) {
+          code += '<div class="model-css-container">';
+          code += '<div class="model-css-header">' + div.inner[i].class[k].get_name() + '</div>';
+          for(var l = 0; l < div.inner[i].class[k].elements.length; l++) {
+              code +=
+                  '<div class="model-css-element">' + div.inner[i].class[k].get(l) + '</div>';
+          }
+          code += '</div>';
+      }
+
     //tworzenie wcięć
     for(var j=0;j<depth;j++){ code+="\t"; }
     code+='</div>\n';
