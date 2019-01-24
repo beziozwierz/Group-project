@@ -35,6 +35,7 @@ Pierwszy element drzewa.
 ***/
 model.inner[0] = new Div('MainModel', '100','100px');//,model);
 
+
  //Zmienne przechowujące obecny punkt odniesienia do rysowania
 var viewpoint_root = model.inner[0];
 var viewpoint_name = "model_0";
