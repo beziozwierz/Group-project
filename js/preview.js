@@ -20,6 +20,7 @@ Tworzenie podswietlonej strony
 function makeDocument() {
   var frame = document.getElementById("theFrame");         
   var doc = document.implementation.createHTMLDocument("New Document");
+  console.log(getPageCode());
 	var rows = htmlToElements(getPageCode());
 	for (var i = 0; i < rows.length; i++) {	
     doc.body.appendChild(rows[i]);
@@ -28,5 +29,6 @@ function makeDocument() {
   var srcNode = doc.documentElement;
   var newNode = destDocument.importNode(srcNode, true); 
   destDocument.replaceChild(newNode, destDocument.documentElement);
-  console.log(model);
+  document.getElementById('theFrame').contentWindow.location.reload();
+  // console.log(model);
 }
