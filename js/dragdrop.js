@@ -222,6 +222,7 @@ function drop(ev) {
           div.inner[i].width = 90;
         }*/
     }
+     makeDocument();
   draw();
   draw_preview();
 }
