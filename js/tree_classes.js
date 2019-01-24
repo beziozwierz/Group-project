@@ -38,7 +38,7 @@ class Div {
     }else{
       this.type = 'container';
     }
-    if(this.name === 'img'){
+    if(this.name === 'img' || this.name ==='iframe'){
       this.src = "";
     }
   }

@@ -43,7 +43,10 @@ function getInnerPageCode(div, depth){
       code+=' src="'+div.inner[i].src+'"/>\n';
       continue;
     }
+    if(div.inner[i].name==='iframe'){
+      code+=' src="'+div.inner[i].src+'"';
 
+    }
     code+='>\n';
 
     //dodanie tekstu dla tekstowych zmiennych (h1,label itp)
