@@ -467,18 +467,24 @@ function modifyInspectorAction(){
     switch (document.getElementById("model-inspector-css-type").innerText) {
         case "<Create ID>":
             document.getElementById("model-inspector-css-type").innerText = "<Create Class>";
+
             break;
 
         case "<Create Class>":
             document.getElementById("model-inspector-css-type").innerText = "<Create ID>";
+
             break;
 
         case "<Edit ID>":
             document.getElementById("model-inspector-css-type").innerText = "<Create ID>";
+            document.getElementById("model-inspector-css-drop-area").innerHTML = "";
+            document.getElementById("model-inspector-css-create").innerText = "CREATE";
             break;
 
         case "<Edit Class>":
             document.getElementById("model-inspector-css-type").innerText = "<Create Class>";
+            document.getElementById("model-inspector-css-drop-area").innerHTML = "";
+            document.getElementById("model-inspector-css-create").innerText = "CREATE";
             break;
     }
 }
