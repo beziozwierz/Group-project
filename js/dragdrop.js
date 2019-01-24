@@ -41,7 +41,6 @@ lub podświetla cały div (dla styli CSS)
 ***/
 function allowDrop(ev) {
   if(ev.target.className !== "model-div"){
-    console.log("NIE ODPALAĆ PODŚWIETLENIA");
     return;
   }
   ev.preventDefault();
@@ -50,9 +49,9 @@ function allowDrop(ev) {
   if(global_type === "CSS"){
     //podświetla środek
     $( ev.target ).css({
-      'borderTop': "1px solid black",
-      'borderBottom': "1px solid black",
-      'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
+      'borderTop': "1px solid #e2e2e2",
+      'borderBottom': "1px solid #e2e2e2",
+      'backgroundColor': "#4a6eb1"
     });
   }else{ //Nad elementem znajduje się element HTML lub TREE(template)
 
@@ -63,8 +62,9 @@ function allowDrop(ev) {
     //podświetlanie
     if(condition<0.2 && ev.target.id !== viewpoint_name){//over top of div, not 1st element in view
       $( ev.target ).css({
-        'borderTop': "20px double green",
-        'borderBottom': "1px solid black",
+        'marginTop': "-6px",
+        'borderTop': "12px solid #4a6eb1",
+        'borderBottom': "1px solid #e2e2e2",
         'backgroundImage': ""
       });
     }else if(condition<0.8){ //over middle of div
@@ -78,15 +78,15 @@ function allowDrop(ev) {
           leave(ev);
       }else{
           $( ev.target ).css({
-            'borderTop': "1px solid black",
-            'borderBottom': "1px solid black",
-            'backgroundImage': "radial-gradient(green, #f8a683, #f8a683)"
+            'borderTop': "1px solid #e2e2e2",
+            'borderBottom': "1px solid #e2e2e2",
+              'backgroundColor': "#4a6eb1"
           });
       }
     }else if(ev.target.id !== viewpoint_name){  //over bottom of the div, not 1st element in view
       $( ev.target ).css({
-        'borderBottom': "20px double green",
-        'borderTop': "1px solid black",
+        'borderBottom': "12px solid #4a6eb1",
+        'borderTop': "1px solid #e2e2e2",
         'backgroundImage': ""
       });
     }
@@ -99,8 +99,8 @@ Powoduje Przywrócenie domyślnego stylu (znika podświetlenie)
 ***/
 function leave(event) { //reset div style (no highlight)
   $( event.target ).css({
-    'border': "1px solid black",
-    'backgroundImage': ""
+    'border': "1px solid #e2e2e2",
+    'backgroundColor': ""
   });
 }
 
@@ -147,6 +147,10 @@ function drop(ev) {
 //    if (div.type !== "MainModel") {
       if (condition < 0.2 && ev.target.id !== viewpoint_name) { //top of div drop
         parent.inner.splice(index, 0, new Div(global_name, 80 / (parent.inner.length + 1), dragged.height));//, div.parent));
+        if(global_name==='img'){
+          srcDiv = parent.inner[index];
+          open_get_src_window();
+        }
         parent.height = 'DEFAULT';
         for (var i = 0; i < parent.inner.length; i++) {
           parent.inner[i].width = 90;
@@ -156,18 +160,28 @@ function drop(ev) {
             return;
           }
           div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height);//, div);
+          if(global_name==='img'){
+            srcDiv = div.inner[div.inner.length-1];
+            open_get_src_window();
+          }
           div.height = 'DEFAULT';
           for (var i = 0; i < div.inner.length; i++) {
             div.inner[i].width = 90;
           }
       } else if(ev.target.id !== viewpoint_name){
           parent.inner.splice(index + 1, 0, new Div(global_name, 80 / parent.inner.length, dragged.height));//, div.parent));
+          if(global_name==='img'){
+            srcDiv = parent.inner[index+1];
+            open_get_src_window();
+          }
           parent.height = 'DEFAULT';
           for (var i = 0; i < parent.inner.length; i++) {
             parent.inner[i].width = 90;
           }
       }
-      //TODO: popup src
+      if(global_name === 'img'){
+
+      }
     } else if(global_type === "CSS_ID") {
       for (var i = 0; i < global_CSS_id.length; i++) {
           if (global_CSS_id[i].get_name() === ev.dataTransfer.getData("text")) {
@@ -179,7 +193,7 @@ function drop(ev) {
   } else if(global_type === "CSS_Class") {
       for (var i = 0; i < global_CSS_class.length; i++) {
           if (global_CSS_class[i].get_name() === ev.dataTransfer.getData("text")) {
-              div.id.push(global_CSS_class[i]);
+              div.class.push(global_CSS_class[i]);
               console.log(getCssCode());
               break;
           }
@@ -220,6 +234,7 @@ function dragTemplate(ev) {
 function drag2(ev, type) {
     ev.dataTransfer.setData("text", ev.target.innerText);
     global_type = "CSS_" + type;
+    element_leaved();
 }
 
 function allowDrop2(ev){

@@ -494,12 +494,21 @@ function model_select(element){
             document.getElementById("model-blocks-select-container").style.display = "none";
             document.getElementById("model-html-select-container").style.display = "block";
             document.getElementById("model-css-select-container").style.display = "none";
-            work_site(1);
+
+            var elem = document.getElementById("model-html-select-container");
+            var str = "<pre><code class=\"html\">" + parse_string(getPageCode()) + "</code></pre>";
+            elem.innerHTML =str;
+            hljs.highlightBlock(elem);
             break;
         case "CSS":
             document.getElementById("model-blocks-select-container").style.display = "none";
             document.getElementById("model-html-select-container").style.display = "none";
             document.getElementById("model-css-select-container").style.display = "block";
+
+            var elem = document.getElementById("model-css-select-container");
+            var str = "<pre><code class=\"css\">" + parse_string(getCssCode()) + "</code></pre>";
+            elem.innerHTML =str;
+            hljs.highlightBlock(elem);
             break;
     }
 }
@@ -522,5 +531,3 @@ function model_resize() {/*
         document.getElementById("model-main-container").style.width = new_pos.toString() + "%";
     }*/
 }
-
-

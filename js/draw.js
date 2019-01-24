@@ -80,6 +80,17 @@ function getInnerCode(div, depth, id){
       }
         code += '</div>';
     }
+
+      for(var k = 0; k < div.inner[i].class.length; k++) {
+          code += '<div class="model-css-container">';
+          code += '<div class="model-css-header">' + div.inner[i].class[k].get_name() + '</div>';
+          for(var l = 0; l < div.inner[i].class[k].elements.length; l++) {
+              code +=
+                  '<div class="model-css-element">' + div.inner[i].class[k].get(l) + '</div>';
+          }
+          code += '</div>';
+      }
+
     //tworzenie wcięć
     for(var j=0;j<depth;j++){ code+="\t"; }
     code+='</div>\n';
@@ -98,7 +109,8 @@ usuń, przybliż, edytuj styl, edytuj tekst(dla typów tekstowych),
 function getEditionPanelCode(name,type){
   code='<div class="model-options-bar">';
 
-  code += '<div class="model-element-title">' + name + '</div>'
+  code += '<div class="model-element-title">' + name + '</div>';
+  code += '<div class="model-element-icons-container">';
   if(name!=="MainModel"){
       code+='<img src="icons/delete.png" class="model-options-bar-btn" onclick="removeFromTree(event,this.parentNode.parentNode.id)"/>';
       if(name!=='text'){
@@ -110,6 +122,7 @@ function getEditionPanelCode(name,type){
           code+='<img src="icons/text.png" class="model-options-bar-btn" onclick="editText(event,this.parentNode.parentNode.id)"/>';
       }
   }
-  code+='</div>\n'
+  code+='</div>\n';
+  code+='</div>\n';
   return code;
 }

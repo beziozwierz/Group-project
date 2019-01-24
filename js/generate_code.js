@@ -21,14 +21,20 @@ function getInnerPageCode(div, depth){
     if (typeof div.inner[i].id !== 'undefined' && div.inner[i].id.length > 0) {
         code += ' id="';
         for (var k = 0; k < div.inner[i].id.length; k++) {
-            code += div.inner[i].id[k].get_name() +' ';
+            code += div.inner[i].id[k].get_name();
+            if(k!=div.inner[i].id.length-1){
+              code += ' ';
+            }
         }
         code += '"';
     }
     if (typeof div.inner[i].class !== 'undefined' && div.inner[i].class.length > 0) {
         code+=' class="';
         for(var k=0; k<div.inner[i].class.length; k++ ){
-          code+= div.inner[i].class[k].get_name()+' ';
+          code+= div.inner[i].class[k].get_name();
+          if(k!=div.inner[i].class.length-1){
+            code += ' ';
+          }
         }
         code+='"';
     }

@@ -25,7 +25,9 @@ pre > code {
   overflow-x: auto;
   padding: 0.5em;
   color: #abb2bf;
-  background: #282c34;
+  background: #051b33;
+  margin-top: 3px;
+  height: calc(100vh - 33px);
 }
 
 .hljs-comment,

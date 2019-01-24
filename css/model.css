@@ -7,37 +7,33 @@
 
 
 .model-div {
+    float: left;
     background-color: #384E77;
-    border: solid 2px #e2e2e2;
+    border: solid 1px #e2e2e2;
     border-radius: 2px;
-    box-sizing: border-box;
     cursor: pointer;
+    margin: 6px 0 6px 6px;;
 }
 
 .model-options-bar{
-  /*pointer-events: none;*/
-
-  position: relative;
-  border-bottom: 1px dotted black;
-  width:auto;
-  cursor: pointer;
+    position: relative;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+    margin-bottom: 1px;
+    float: left;
+    width: 100%;
 }
-.
-.model-element-title{
-  /*pointer-events: none;*/
 
-  float: left;
-  width: 40%
+.model-element-title{
+    float: left;
+    width: 40%
 }
 .model-options-bar-btn{
-  /*pointer-events: none;*/
-
-
-  width: 20px;
-  height: 20px;
-  text-align: center;
-    margin-left: 2px;
-  float: right;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    float: right;
+    margin: 2px 2px 0 0;
 }
 .model-options-bar-btn:hover {
   color: blue;
@@ -55,22 +51,23 @@
 }
 
 .model-css-container{
-    width: 40%;
+    width: 38%;
     display: inline-block;
     padding: 3px 10px;
     border-radius: 2px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #b3ffaf;
-    border: solid 2px #599d5a;
+    background-color: #493970;
+    border: solid 1px #e2e2e2;
+    margin: -1px -1px 0 0;
 }
 
 .model-css-header{
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
 }
 
 .model-css-element{
-  font-size: 16px;
+  font-size: 11px;
   cursor: pointer;
 }
