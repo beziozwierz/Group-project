@@ -131,3 +131,20 @@ function create_template(event,id){
   }
 
 }
+//if(=== 'img')
+function open_get_src_window(){
+  code = '<div class="edit-element-close" ';
+  code += 'onclick="close_me('+"'get-source-window')"+'">×</div>';
+  code += '<h4 style="text-align: center; margin-top: 0px; margin-bottom: 0px;">Enter the path to the file:</h1>'
+  code += '<textarea id= "get-source-input">';
+  code+='</textarea>'
+  code += '<div id="get-source-btn" onclick="saveSrc()">SAVE</div>';
+
+  w = document.getElementById("get-source-window");
+  w.innerHTML = code;
+  w.style.display = "block";
+}
+function saveSrc(){
+  srcDiv.src=document.getElementById("get-source-input").value;
+  close_me("get-source-window");
+}

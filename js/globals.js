@@ -41,3 +41,6 @@ var viewpoint_root = model.inner[0];
 var viewpoint_name = "model_0";
 
 var zoomed = false;
+
+//przechowuje div do ktorego doda sie source
+var srcDiv;

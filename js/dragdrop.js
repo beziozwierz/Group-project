@@ -147,6 +147,10 @@ function drop(ev) {
 //    if (div.type !== "MainModel") {
       if (condition < 0.2 && ev.target.id !== viewpoint_name) { //top of div drop
         parent.inner.splice(index, 0, new Div(global_name, 80 / (parent.inner.length + 1), dragged.height));//, div.parent));
+        if(global_name==='img'){
+          srcDiv = parent.inner[index];
+          open_get_src_window();
+        }
         parent.height = 'DEFAULT';
         for (var i = 0; i < parent.inner.length; i++) {
           parent.inner[i].width = 90;
@@ -156,19 +160,27 @@ function drop(ev) {
             return;
           }
           div.inner[div.inner.length] = new Div(global_name, 80 / (div.inner.length + 1), dragged.height);//, div);
+          if(global_name==='img'){
+            srcDiv = div.inner[div.inner.length-1];
+            open_get_src_window();
+          }
           div.height = 'DEFAULT';
           for (var i = 0; i < div.inner.length; i++) {
             div.inner[i].width = 90;
           }
       } else if(ev.target.id !== viewpoint_name){
           parent.inner.splice(index + 1, 0, new Div(global_name, 80 / parent.inner.length, dragged.height));//, div.parent));
+          if(global_name==='img'){
+            srcDiv = parent.inner[index+1];
+            open_get_src_window();
+          }
           parent.height = 'DEFAULT';
           for (var i = 0; i < parent.inner.length; i++) {
             parent.inner[i].width = 90;
           }
       }
       if(global_name === 'img'){
-        
+
       }
     } else if(global_type === "CSS_ID") {
       for (var i = 0; i < global_CSS_id.length; i++) {
