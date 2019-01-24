@@ -324,6 +324,19 @@
               </div>
           </div>
         </div>
+        <div id="toolbar-load-categories-container">
+          
+        </div>
+        <div id="toolbar-save-categories-container">
+          <div class="toolbar-category-button">
+            <h3>Project name:</h3>
+              <div class="toolbar-category-title">
+                  <input type="text" name="name" id="save_project_name">
+                  <br />
+                  <button onclick="fn_save_html();">Save</button>
+              </div>
+          </div>
+        </div>
     </div>
     <div id="toolbar-resize">
 
@@ -383,11 +396,11 @@
             <div class="toolbar-button" onclick="category_select(this)">
                 SAVE
             </div>
-            <div class="toolbar-button" onclick="category_select(this)">
+            <div class="toolbar-button" onclick="category_select(this);fn_load_list_project();">
                 LOAD
             </div>
-            <div class="toolbar-button" onclick="category_select(this)">
-                LOG IN
+            <div class="toolbar-button">
+                <a href="/" style="color: white; text-decoration: none">LOG IN</a>
             </div>
         </div>
     </div>

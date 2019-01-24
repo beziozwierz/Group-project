@@ -242,6 +242,24 @@ input:focus{
     margin-top: 3px;
     display: none;
 }
+#toolbar-load-categories-container{
+    width: 100%;
+    float: left;
+    margin-top: 3px;
+    display: none;
+}
+#toolbar-save-categories-container{
+    width: 100%;
+    float: left;
+    margin-top: 3px;
+    display: none;
+}
+#toolbar-save-categories-container input{
+    background-color: white;
+}
+#toolbar-save-categories-container .toolbar-category-title{
+    text-align: center;
+}
 .template-drag-element{
   width: 98%;
   height: 40px;

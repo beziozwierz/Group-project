@@ -20,16 +20,36 @@ function category_select(element){
             document.getElementById("toolbar-html-categories-container").style.display = "block";
             document.getElementById("toolbar-css-categories-container").style.display = "none";
             document.getElementById("toolbar-templates-categories-container").style.display = "none";
+            document.getElementById("toolbar-load-categories-container").style.display = "none";
+            document.getElementById("toolbar-save-categories-container").style.display = "none";
             break;
         case "CSS":
             document.getElementById("toolbar-html-categories-container").style.display = "none";
             document.getElementById("toolbar-css-categories-container").style.display = "block";
             document.getElementById("toolbar-templates-categories-container").style.display = "none";
+            document.getElementById("toolbar-load-categories-container").style.display = "none";
+            document.getElementById("toolbar-save-categories-container").style.display = "none";
             break;
         case "TEMPLATES":
             document.getElementById("toolbar-html-categories-container").style.display = "none";
             document.getElementById("toolbar-css-categories-container").style.display = "none";
             document.getElementById("toolbar-templates-categories-container").style.display = "block";
+            document.getElementById("toolbar-load-categories-container").style.display = "none";
+            document.getElementById("toolbar-save-categories-container").style.display = "none";
+            break;
+        case "LOAD":
+            document.getElementById("toolbar-html-categories-container").style.display = "none";
+            document.getElementById("toolbar-css-categories-container").style.display = "none";
+            document.getElementById("toolbar-templates-categories-container").style.display = "none";
+            document.getElementById("toolbar-load-categories-container").style.display = "block";
+            document.getElementById("toolbar-save-categories-container").style.display = "none";
+            break;
+        case "SAVE":
+            document.getElementById("toolbar-html-categories-container").style.display = "none";
+            document.getElementById("toolbar-css-categories-container").style.display = "none";
+            document.getElementById("toolbar-templates-categories-container").style.display = "none";
+            document.getElementById("toolbar-load-categories-container").style.display = "none";
+            document.getElementById("toolbar-save-categories-container").style.display = "block";
             break;
     }
 }
