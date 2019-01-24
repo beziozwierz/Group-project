@@ -50,7 +50,7 @@ function parse_string(str){
 }
 
 /***
-FUnkcja wyświetlająca zakładki 
+FUnkcja wyświetlająca zakładki
 @param option - parametr odpowiadujący za wyb<or zakładki
 1 - pokż scheme, 2 - pokaż kod
 ***/
@@ -79,5 +79,5 @@ function work_site(option){
 
 function close_me(me) {
     document.getElementById(me).style.display = "none";
-
+    draw_preview();
 }
