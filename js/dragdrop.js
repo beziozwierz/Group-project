@@ -179,7 +179,7 @@ function drop(ev) {
   } else if(global_type === "CSS_Class") {
       for (var i = 0; i < global_CSS_class.length; i++) {
           if (global_CSS_class[i].get_name() === ev.dataTransfer.getData("text")) {
-              div.id.push(global_CSS_class[i]);
+              div.class.push(global_CSS_class[i]);
               console.log(getCssCode());
               break;
           }
