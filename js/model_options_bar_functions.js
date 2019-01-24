@@ -14,9 +14,14 @@ Funkcje przycisków w panelach divów w modelu
       index = path[i];
     }
     deleteStylesDiv = div;
+
+    var open = false;
+
     code = '<div class="edit-element-close" ';
     code += 'onclick="close_me('+"'edit-styles-window')"+'">×</div>';
+    code += '<h4>Click on style to remove it:</h4>';
     if (typeof div.id !== 'undefined' && div.id.length > 0){
+      open = true;
       for (var k = 0; k < div.id.length; k++) {
         xx = div.id[k].get_name();
         code+='<div class="rm-style" '+
@@ -24,16 +29,19 @@ Funkcje przycisków w panelach divów w modelu
       }
     }
     if (typeof div.class !== 'undefined' && div.class.length > 0){
+      open = true;
       for (var k = 0; k < div.class.length; k++) {
         xx = div.class[k].get_name();
         code+='<div class="rm-style" '+
         'onclick="delete_class_from_div('+"'"+xx+"'"+'); this.style.display='+"'none';"+'">'+xx+'</div>';
       }
     }
-    console.log(code);
-    w = document.getElementById("edit-styles-window");
-    w.innerHTML = code;
-    w.style.display = "block";
+    //console.log(code);
+    if(open){
+      w = document.getElementById("edit-styles-window");
+      w.innerHTML = code;
+      w.style.display = "block";
+    }
     /*
     if (typeof div.inner[i].class !== 'undefined' && div.inner[i].class.length > 0){
 
@@ -172,7 +180,7 @@ function create_template(event,id){
   //modal, podanie id
   var txt;
   var name = prompt("Podaj nazwę templatki:", "");
-  if (name == null || name == "" || templates[name]!=null) {
+  if (name == null || name == "" || templates[name]!=null || default_templates[name]!=null) {
     window.alert("Błąd, podaj inna nazwe");
   } else {
    templates[name] = copy;

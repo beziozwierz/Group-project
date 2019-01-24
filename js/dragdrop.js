@@ -221,13 +221,40 @@ function drop(ev) {
         /*for (var i = 0; i < div.inner.length; i++) {
           div.inner[i].width = 90;
         }*/
-    }
+    }else if(global_type === "TREE2"){
+          //tworzenie kopii poddrzewa (templatki)
+          template_name = ev.dataTransfer.getData("text");
+          copy = JSON.parse(JSON.stringify(default_templates[template_name]));
+
+          if(copy === default_templates[template_name]){
+            console.log("ERR1 (dragrop)");
+          }
+          if(copy.inner[0] === default_templates[template_name].inner[0]){
+            console.log("SHALLOW NIE DEEP");
+          }
+
+          if (condition < 0.2 && ev.target.id !== viewpoint_name)
+            parent.inner.splice(index, 0, copy);
+          else if(condition < 0.8)
+            div.inner[div.inner.length] = copy;
+          else if(ev.target.id !== viewpoint_name)
+            parent.inner.splice(index + 1, 0, copy);
+
+          //!!! WIĘCEJ NIŻ 1 POZIOM
+          /*for (var i = 0; i < div.inner.length; i++) {
+            div.inner[i].width = 90;
+          }*/
+      }
   draw();
   draw_preview();
 }
 function dragTemplate(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
   global_type = "TREE";
+}
+function dragTemplate2(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+  global_type = "TREE2";
 }
 
 
